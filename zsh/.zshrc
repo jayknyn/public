@@ -49,6 +49,8 @@ alias ls='ls -G' # ls - TAB for all varibales
 alias md='mkdir -p'
 alias ip='curl https://ipinfo.io'
 alias reload='source ~/.zshrc'
+alias duh1='sudo du -h --max-depth=1'
+alias fw='sudo ufw status | grep ALLOW'
 
 alias ssr='sudo systemctl restart'
 alias sss='sudo systemctl status'
