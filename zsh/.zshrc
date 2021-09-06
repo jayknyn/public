@@ -51,10 +51,10 @@ alias gs='git status'
 alias gcem='git commit --allow-empty -m'
 alias gpo='git push origin'
 
-alias l='ls -laFh' #l=long list, a=show starting with . (hidden), h=human readable sizes
-alias la='ls -lAFh' #A=list all hidden except . and ..
-alias ll='ls -lFh' #long list and human readable sizes, no hidden
-alias ls='ls -G' # ls - TAB for all varibales
+alias l='ls -laFh --color=auto' #l=long list, a=show starting with . (hidden), h=human readable sizes
+alias la='ls -lAFh --color=auto' #A=list all hidden except . and ..
+alias ll='ls -lFh --color=auto' #long list and human readable sizes, no hidden
+alias ls='ls -G --color=auto' # ls - TAB for all varibales
 # l='ls -lah'
 # la='ls -lAh'
 # ll='ls -lh'
