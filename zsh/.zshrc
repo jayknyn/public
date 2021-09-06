@@ -36,6 +36,15 @@ alias stats='docker ps -q | xargs docker stats --no-stream'
 alias vdc='vim docker-compose.yml'
 alias rdc='rm docker-compose.yml'
 
+alias ip='curl https://ipinfo.io'
+alias reload='source ~/.zshrc'
+alias duh1='sudo du -h --max-depth=1'
+alias fw='sudo ufw status | grep ALLOW'
+alias md='mkdir -p'
+
+alias ssr='sudo systemctl restart'
+alias sss='sudo systemctl status'
+
 alias gc='git clone'
 alias gacm='git add-commit -m'
 alias gs='git status'
@@ -46,14 +55,11 @@ alias l='ls -laFh' #l=long list, a=show starting with . (hidden), h=human readab
 alias la='ls -lAFh' #A=list all hidden except . and ..
 alias ll='ls -lFh' #long list and human readable sizes, no hidden
 alias ls='ls -G' # ls - TAB for all varibales
-alias md='mkdir -p'
-alias ip='curl https://ipinfo.io'
-alias reload='source ~/.zshrc'
-alias duh1='sudo du -h --max-depth=1'
-alias fw='sudo ufw status | grep ALLOW'
-
-alias ssr='sudo systemctl restart'
-alias sss='sudo systemctl status'
+# l='ls -lah'
+# la='ls -lAh'
+# ll='ls -lh'
+# ls='ls --color=tty'
+# lsa='ls -lah'
 
 #from zsh
 #alias ..='cd ..'
