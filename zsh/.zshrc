@@ -12,6 +12,8 @@ source $ZSH/oh-my-zsh.sh
 
 cd /opt
 
+unalias -a # destroy all existing aliases
+
 alias dps='docker ps -a'
 alias dps2='docker ps -a --format "table {{.Names}}\t{{.Status}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
 alias dpsp='docker ps -a --format "table {{.Names}}\t{{.Ports}}\t{{.Status}}\t{{.Size}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
@@ -55,13 +57,25 @@ alias l='ls -laFh --color=auto' #l=long list, a=show starting with . (hidden), h
 alias la='ls -lAFh --color=auto' #A=list all hidden except . and ..
 alias ll='ls -lFh --color=auto' #long list and human readable sizes, no hidden
 alias ls='ls -G --color=auto' # ls - TAB for all varibales
-# l='ls -lah'
-# la='ls -lAh'
-# ll='ls -lh'
-# ls='ls --color=tty'
-# lsa='ls -lah'
 
 #from zsh
-#alias ..='cd ..'
-#alias cd='cd ~'
-#alias /='cd /'
+alias ..='cd ..'
+alias ~='cd ~'
+alias /='cd /'
+alias ...=../..
+alias ....=../../..
+alias .....=../../../..
+alias ......=../../../../..
+
+# afind='ack -il'
+# diff='diff --color'
+# gb='git branch'
+# gbD='git branch -D' # delete all branches
+# gbd='git branch -d'
+# gcb='git checkout -b'
+# gcem='git commit --allow-empty -m'
+# gco='git checkout'
+# gl='git pull'
+# gp='git push'
+# gpo='git push origin'
+# which-command=whence
