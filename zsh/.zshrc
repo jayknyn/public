@@ -30,6 +30,7 @@ alias ddu='dcd && dcu'
 alias dcb='docker-compose build'
 alias dl='docker logs --follow'
 alias dcl='docker-compose logs -f'
+alias dcp='docker-compose pull'
 
 alias dv='docker volume ls'
 alias dvr='docker volume rm $(docker volume ls -q)'
@@ -40,7 +41,7 @@ alias rdc='rm docker-compose.yml'
 
 alias ip='curl https://ipinfo.io'
 alias reload='source ~/.zshrc'
-alias duh1='sudo du -h --max-depth=1'
+alias du='sudo du -h --max-depth=1'
 alias fw='sudo ufw status | grep ALLOW'
 alias md='mkdir -p'
 
@@ -59,6 +60,12 @@ alias ll='ls -lFh' #long list and human readable sizes, no hidden
 alias ls='ls --color=auto' # ls - TAB for all varibales
 
 alias newzsh='wget -O /home/$USER/.zshrc https://raw.githubusercontent.com/jayknyn/public/release/zsh/.zshrc && wget -O /home/$USER/.oh-my-zsh/themes/jax.zsh-theme  https://raw.githubusercontent.com/jayknyn/public/release/zsh/jax.zsh-theme && source ~/.zshrc'
+
+# for docker-mailserver
+alias el='./setup.sh email list'
+
+# for macbook
+encode() { echo -n $1 | base64 } # base64 encode the input to $ encode INPUT
 
 #from zsh
 alias ..='cd ..'
