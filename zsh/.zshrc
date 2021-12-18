@@ -76,6 +76,8 @@ alias ....=../../..
 alias .....=../../../..
 alias ......=../../../../..
 
+alias version='1.0' # aliases release version
+
 # afind='ack -il'
 # diff='diff --color'
 # gb='git branch'
