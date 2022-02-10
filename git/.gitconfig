@@ -1,0 +1,24 @@
+[user]
+	name = Jay Kannaiyan
+	email = 
+[push]
+	default = current
+[tag]
+	sort = version:refname
+[core]
+	autocrlf = false
+	safecrlf = true
+	editor = vim
+	excludesfile = /Users/$USER/.gitignore_global
+[alias]
+	add-commit = !git add -A && git commit
+	tidy = rebase -i @{upstream}..
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[pull]
+	rebase = preserve
+[merge]
+	ff = false
+[status]
+	showUntrackedFiles = all
