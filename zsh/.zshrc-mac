@@ -54,12 +54,6 @@ alias reload='source ~/.zshrc'
 alias du='du -h -d 1'
 alias md='mkdir -p'
 
-alias gc='git clone'
-alias gacm='git add -A && git commit -m'
-alias gs='git status'
-alias gcem='git commit --allow-empty -m'
-alias gpo='git push origin'
-
 alias ls='ls -G' # ls - TAB for all varibales
 alias l='ls -laFh' #l=long list, a=show starting with . (hidden), h=human readable sizes
 alias la='ls -lAFh' #A=list all hidden except . and ..
@@ -79,8 +73,11 @@ alias .....=../../../..
 alias ......=../../../../..
 
 alias version='2.0' # aliases release version
-
 alias diff='diff --color'
+
+alias gc='git clone'
+alias gacm='git add -A && git commit -m'
+alias gs='git status'
 alias gb='git branch'
 alias gbD='git branch -D' # delete all branches
 alias gbd='git branch -d'
