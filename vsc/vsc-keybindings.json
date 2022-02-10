@@ -1,0 +1,26 @@
+[
+  {
+    "key": "cmd+shift+v",
+    "command": "workbench.action.toggleMaximizedPanel"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "editor.action.commentLine"
+  },
+  {
+    "key": "cmd+shift+s",
+    "command": "workbench.action.files.saveWithoutFormatting"
+  },
+  {
+    "key": "cmd+shift+d",
+    "command": "editor.action.deleteLines"
+  },
+  {
+    "key": "cmd+k cmd+s",
+    "command": "search.action.collapseSearchResults"
+  },
+  {
+    "key": "cmd+k cmd+e",
+    "command": "workbench.files.action.collapseExplorerFolders"
+  }
+]

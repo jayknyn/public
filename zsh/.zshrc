@@ -43,6 +43,7 @@ alias rdc='rm docker-compose.yml'
 alias ip='curl https://ipinfo.io'
 alias reload='source ~/.zshrc'
 alias du='sudo du -h --max-depth=1'
+alias dugb='sudo du -h --max-depth=1 --threshold=1GB'
 alias fw='sudo ufw status | grep ALLOW'
 alias md='mkdir -p'
 

@@ -1,0 +1,10 @@
+eamodio.gitlens
+EditorConfig.EditorConfig
+eg2.vscode-npm-script
+esbenp.prettier-vscode
+fabiospampinato.vscode-markdown-todo
+hashicorp.terraform
+oderwat.indent-rainbow
+rangav.vscode-thunder-client
+Shan.code-settings-sync
+tombonnike.vscode-status-bar-format-toggle
