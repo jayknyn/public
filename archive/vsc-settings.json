@@ -18,23 +18,26 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+  "prettier.jsxSingleQuote": true,
   "git.path": "",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "prettier.jsxSingleQuote": true,
-  "prettier.singleQuote": true,
   "prettier.jsxBracketSameLine": true,
   "prettier.semi": false,
   "prettier.trailingComma": "none",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "json.schemas": [],
   "editor.fontLigatures": null,
   "files.associations": {
     "*.yml": "yaml"
   },
+  "prettier.singleQuote": true,
+  "sync.autoUpload": true,
+  "sync.autoDownload": true,
+  "sync.gist": "bc0bb44ae617b97dceb84acad0965e37",
   "window.zoomLevel": 1,
   "security.workspace.trust.untrustedFiles": "open"
 }

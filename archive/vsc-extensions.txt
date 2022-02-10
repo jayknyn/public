@@ -6,4 +6,5 @@ fabiospampinato.vscode-markdown-todo
 hashicorp.terraform
 oderwat.indent-rainbow
 rangav.vscode-thunder-client
+Shan.code-settings-sync
 tombonnike.vscode-status-bar-format-toggle

@@ -60,7 +60,7 @@ alias gs='git status'
 alias gcem='git commit --allow-empty -m'
 alias gpo='git push origin'
 
-alias ls='ls --color=always' # ls - TAB for all varibales
+alias ls='ls -G' # ls - TAB for all varibales
 alias l='ls -laFh' #l=long list, a=show starting with . (hidden), h=human readable sizes
 alias la='ls -lAFh' #A=list all hidden except . and ..
 alias ll='ls -lFh' #long list and human readable sizes, no hidden
@@ -90,4 +90,5 @@ alias gco='git checkout'
 alias gl='git pull'
 alias gp='git push'
 alias gpo='git push origin'
-# which-command=whence
+
+alias vsc='codium .'
