@@ -15,6 +15,10 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+# autocomplete for terraform
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
+
 # aliases
 unalias -a # destroy all existing aliases
 
@@ -83,6 +87,9 @@ alias gp='git push'
 alias gpo='git push origin'
 
 alias vsc='codium .'
+alias jk='cd ~/codejk'
+alias ir='cd ~/codeir'
+alias jax='cd ~/codejk/jax-cloud && vsc'
 
 alias t='terraform'
 alias k='kubectl'
