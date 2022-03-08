@@ -88,8 +88,11 @@ alias gpo='git push origin'
 
 alias vsc='codium .'
 alias jk='cd ~/codejk'
-alias ir='cd ~/codeir'
 alias jax='cd ~/codejk/jax-cloud && vsc'
+
+alias nr='npm run'
+alias ns='npm run start'
+alias nc='npm ci'
 
 alias t='terraform'
 alias k='kubectl'

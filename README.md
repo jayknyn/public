@@ -15,6 +15,13 @@ $ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh
 $ git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
+- Install .zshrc and theme for root user
+
+```
+$ wget -O /root/.zshrc https://raw.githubusercontent.com/jayknyn/public/release/zsh/.zshrc \
+&& wget -O /root/.oh-my-zsh/themes/jax.zsh-theme  https://raw.githubusercontent.com/jayknyn/public/release/zsh/jax.zsh-theme && source ~/.zshrc
+```
+
 ## Homebrew
 
 ```
