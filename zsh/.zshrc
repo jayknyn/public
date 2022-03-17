@@ -1,18 +1,17 @@
-# zshrc for linux
+# .zshrc for linux, v2.1
 export ZSH=$HOME/.oh-my-zsh
-
 ZSH_THEME="jax"
-
 export UPDATE_ZSH_DAYS=90
-
 COMPLETION_WAITING_DOTS="true"
-
 plugins=(git zsh-autosuggestions)
-
 source $ZSH/oh-my-zsh.sh
-
 cd /opt
 
+# bash functions
+encode() { echo -n $1 | base64 } # base64 encode the input: $ encode INPUT
+decode() { echo -n $1 | base64 -d } # base64 decode the input
+
+# aliases 
 unalias -a # destroy all existing aliases
 
 alias dps='docker ps -a'
@@ -63,9 +62,6 @@ alias ll='ls -lFh' #long list and human readable sizes, no hidden
 
 alias newzsh='wget -O /home/$USER/.zshrc https://raw.githubusercontent.com/jayknyn/public/release/zsh/.zshrc && wget -O /home/$USER/.oh-my-zsh/themes/jax.zsh-theme  https://raw.githubusercontent.com/jayknyn/public/release/zsh/jax.zsh-theme && source ~/.zshrc'
 
-# for docker-mailserver
-alias el='./setup.sh email list'
-
 #from zsh
 alias ..='cd ..'
 alias ~='cd ~'
@@ -74,5 +70,3 @@ alias ...=../..
 alias ....=../../..
 alias .....=../../../..
 alias ......=../../../../..
-
-alias version='1.0' # aliases release version
