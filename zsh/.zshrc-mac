@@ -19,6 +19,10 @@ export NVM_DIR="$HOME/.nvm"
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
+# autocomplete for gcloud
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+
 # bash functions
 encode() { echo -n $1 | base64 } # base64 encode the input: $ encode INPUT
 decode() { echo -n $1 | base64 -d } # base64 decode the input
@@ -96,3 +100,4 @@ alias nc='npm ci'
 
 alias t='terraform'
 alias k='kubectl'
+alias python='python3'
