@@ -48,3 +48,9 @@ git commit --amend --reset-author
 4. `cp vsc/vsc-settings.json ~/Library/Application\ Support/VSCodium/User/settings.json`
 
 5. `cp vsc/vscode-keybindings.json ~/Library/Application\ Support/VSCodium/User/keybindings.json`
+
+## Extra Docker Commands
+
+```
+watch 'docker ps -a'
+```

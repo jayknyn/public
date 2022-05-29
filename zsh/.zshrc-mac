@@ -10,6 +10,9 @@ cd ~
 eval "$(/usr/local/bin/brew shellenv)" # for homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
 
+# Add vscode codium to path
+export PATH="\$PATH:/Applications/VSCodium.app/Contents/Resources/app/bin"
+
 # node version manager, $ mkdir ~/.nvm
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
@@ -100,4 +103,3 @@ alias nc='npm ci'
 
 alias t='terraform'
 alias k='kubectl'
-alias python='python3'
