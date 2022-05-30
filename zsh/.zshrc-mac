@@ -1,4 +1,4 @@
-# .zshrc for mac, v2.1
+# .zshrc for mac, v3, monterey
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
 export UPDATE_ZSH_DAYS=90
@@ -7,13 +7,10 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 cd ~
 
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:
-
 eval "$(/usr/local/bin/brew shellenv)" # for homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-# Add vscode codium to path
-# export PATH="\$PATH:/Applications/VSCodium.app/Contents/Resources/app/bin"
+eval "$(pyenv init --path)" # for python2
 
 # node version manager, $ mkdir ~/.nvm
 export NVM_DIR="$HOME/.nvm"
