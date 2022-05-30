@@ -7,11 +7,13 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 cd ~
 
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:
+
 eval "$(/usr/local/bin/brew shellenv)" # for homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Add vscode codium to path
-export PATH="\$PATH:/Applications/VSCodium.app/Contents/Resources/app/bin"
+# export PATH="\$PATH:/Applications/VSCodium.app/Contents/Resources/app/bin"
 
 # node version manager, $ mkdir ~/.nvm
 export NVM_DIR="$HOME/.nvm"
