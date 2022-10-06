@@ -1,4 +1,4 @@
-# .zshrc for linux, v2.3
+# .zshrc for linux, v2.4
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
 export UPDATE_ZSH_DAYS=90
@@ -35,6 +35,8 @@ alias dcp='docker-compose pull'
 alias dv='docker volume ls'
 alias dvr='docker volume rm $(docker volume ls -q)'
 alias stats='docker ps -q | xargs docker stats --no-stream'
+
+alias el='docker exec mailserver setup email list'
 
 alias vdc='vim docker-compose.yml'
 alias rdc='rm docker-compose.yml'
