@@ -75,4 +75,4 @@ alias ......=../../../../..s
 
 ##
 
-cd /opt && ps
+cd /opt && ps && landscape-sysinfo --exclude-sysinfo-plugins=Network,Processes
