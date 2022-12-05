@@ -1,11 +1,10 @@
-# .zshrc for linux, v2.4
+# .zshrc for linux, v2.6
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
-export UPDATE_ZSH_DAYS=90
+export UPDATE_ZSH_DAYS=180
 COMPLETION_WAITING_DOTS="true"
 plugins=(git zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
-cd /opt
 
 # bash functions
 encode() { echo -n $1 | base64 } # base64 encode the input: $ encode INPUT
@@ -14,9 +13,12 @@ decode() { echo -n $1 | base64 -d } # base64 decode the input
 # aliases 
 unalias -a # destroy all existing aliases
 
+alias newzsh='wget -O /home/$USER/.zshrc https://raw.githubusercontent.com/jayknyn/public/release/zsh/.zshrc-linux && wget -O /home/$USER/.oh-my-zsh/themes/jax.zsh-theme  https://raw.githubusercontent.com/jayknyn/public/release/zsh/jax-linux.zsh-theme && source ~/.zshrc'
+
 alias dps='docker ps -a'
-alias dps2='docker ps -a --format "table {{.Names}}\t{{.Status}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
+alias ps='docker ps -a --format "table {{.Names}}\t{{.Status}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
 alias dpsp='docker ps -a --format "table {{.Names}}\t{{.Ports}}\t{{.Status}}\t{{.Size}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
+alias dpsid='docker ps -a --format "table {{.Names}}\t{{.ID}}\t{{.Status}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
 alias di='docker images -a'
 alias dstop='docker stop $(docker ps -a -q)'
 alias drm='docker rm $(docker ps -a -q)'
@@ -62,8 +64,6 @@ alias l='ls -laFh' #l=long list, a=show starting with . (hidden), h=human readab
 alias la='ls -lAFh' #A=list all hidden except . and ..
 alias ll='ls -lFh' #long list and human readable sizes, no hidden
 
-alias newzsh='wget -O /home/$USER/.zshrc https://raw.githubusercontent.com/jayknyn/public/release/zsh/.zshrc && wget -O /home/$USER/.oh-my-zsh/themes/jax.zsh-theme  https://raw.githubusercontent.com/jayknyn/public/release/zsh/jax.zsh-theme && source ~/.zshrc'
-
 #from zsh
 alias ..='cd ..'
 alias ~='cd ~'
@@ -71,4 +71,8 @@ alias /='cd /'
 alias ...=../..
 alias ....=../../..
 alias .....=../../../..
-alias ......=../../../../..
+alias ......=../../../../..s
+
+##
+
+cd /opt && ps
