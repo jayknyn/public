@@ -111,9 +111,11 @@ alias jk='cd ~/codejk'
 alias jax='cd ~/codejk/jax-cloud && vsc'
 alias yt='youtube-dl'
 
+alias ni='npm install'
+alias nc='npm ci'
 alias nr='npm run'
 alias ns='npm run start'
-alias nc='npm ci'
+alias nb='npm run build'
 
 alias t='terraform'
 alias k='kubectl'
