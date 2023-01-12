@@ -52,6 +52,8 @@ alias md='mkdir -p'
 
 alias ssr='sudo systemctl restart'
 alias sss='sudo systemctl status'
+alias start='sudo systemctl start'
+alias stop='sudo systemctl stop'
 
 alias gc='git clone'
 alias gacm='git add-commit -m'
