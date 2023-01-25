@@ -5,10 +5,8 @@ export UPDATE_ZSH_DAYS=180
 COMPLETION_WAITING_DOTS="true"
 plugins=(git zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
-# cd ~
 
 #PROMPT='%F{208}%n%f@%M% ➜%F{226}%f%d% % %'
-
 #PROMPT='%(!.%{%F{green}%}.)%{$fg[green]%}%n@%{$fg[green]%}%M%{$fg_bold[red]%}➜%{$fg_bold[green]%}%p%{$fg[cyan]%}%d%{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
 # PATH=/Users/jay/.pyenv/shims:/usr/local/bin:/usr/local/sbin:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:/usr/bin:/bin:/usr/sbin:/sbin:

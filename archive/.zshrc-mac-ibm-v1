@@ -1,0 +1,391 @@
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+source ~/.aliases
+
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/jay/.oh-my-zsh"
+
+ZSH_THEME="robbyrussell2"
+
+export UPDATE_ZSH_DAYS=90
+COMPLETION_WAITING_DOTS="true"
+
+plugins=(git timer zsh-autosuggestions)
+
+setopt PROMPT_SUBST
+PROMPT='%m:%1~ %n%#'
+
+ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
+  mkdir $ZSH_CACHE_DIR
+fi
+
+source $ZSH/oh-my-zsh.sh
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
+
+# For gcloud cli
+export CLOUDSDK_PYTHON="/usr/local/opt/python@3.8/libexec/bin/python"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
+# For React Native, Android Studio
+export ANDROID_HOME=$HOME/Library/Android/sdk 
+export PATH=$PATH:$ANDROID_HOME/emulator 
+export PATH=$PATH:$ANDROID_HOME/tools 
+export PATH=$PATH:$ANDROID_HOME/tools/bin 
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# For Helm v2
+export PATH="/usr/local/opt/helm@2/bin:$PATH"
+
+# For GNUpg
+export GUILE_LOAD_PATH="/usr/local/share/guile/site/3.0"
+export GUILE_LOAD_COMPILED_PATH="/usr/local/lib/guile/3.0/site-ccache"
+export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
+
+# added by travis gem
+[ ! -s /Users/jay/.travis/travis.sh ] || source /Users/jay/.travis/travis.sh
+
+######
+# .aliases
+
+alias dps='docker ps -a'
+alias di='docker images -a'
+alias dpsp='docker ps -a --format "table {{.Names}}\t{{.Ports}}\t{{.Status}}\t{{.Size}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
+alias dstop='docker stop $(docker ps -a -q)'
+alias drm='docker rm $(docker ps -a -q)'
+alias dirm='docker rmi $(docker images -a -q)'
+alias dcu='docker-compose up -d'
+alias dcul='docker-compose up -d && docker-compose logs -f'
+alias dc='docker-compose up'
+alias dcd='docker-compose down'
+alias ddu='dcd && dcu'
+alias dcb='docker-compose build'
+alias dl='docker logs --follow'
+alias dcl='docker-compose logs -f'
+alias dcc='docker-compose config'
+alias dv='docker volume ls'
+alias dvr='docker volume rm $(docker volume ls -q)'
+alias stats='docker ps -q | xargs docker stats --no-stream'
+
+alias gc='git clone'
+alias gacm='git add-commit -m'
+alias gs='git status'
+alias gcem='git commit --allow-empty -m'
+alias gpo='git push origin'
+#alias gbo='git branch --set-upstream-to=origin/$1 $1'
+alias ies='cd ~/code'
+alias jk='cd ~/codejk'
+alias vsc='code .'
+encode() { echo -n $1 | base64; }
+#gbo { git branch --set-upstream-to=origin/$1 $1 }
+
+alias tf='terraform' 
+alias n='npm'
+alias nr='npm run'
+alias ni='npm install'
+alias nc='npm ci'
+alias ns='npm run start'
+alias nv='npm version'
+alias naf='npm audit fix'
+alias na='npm audit'
+alias ncbs='nr clean && nr build && ns'
+alias ncbs='npm run clean && npm run build && npm run start'
+alias df='cd ~/code/ies-dashboard-frontend'
+alias ds='cd ~/code/ies-dashboard-service'
+alias hr='cd ~/code/ies-hsk-registration-frontend'
+alias hp='cd ~/code/ies-hsk-procurement-frontend'
+
+alias ibmk8s='ibmcloud login --apikey jIVmyyU1BEMWq5Gl0RraHftix8P3r02p_s7z2fK-Udn8'
+alias cluster='echo "kubectl config current-context" && kubectl config current-context'
+alias cluster-dev='echo "ibmcloud ks cluster config -c ies-dev" && ibmcloud ks cluster config -c ies-dev'
+alias cluster-test='echo "ibmcloud ks cluster config -c ies-test" && ibmcloud ks cluster config -c ies-test'
+alias cluster-staging='echo "ibmcloud ks cluster config -c ies-staging" && ibmcloud ks cluster config -c ies-staging'
+
+alias cluster-do='kubectl cluster config -c do-nyc1-k8s-do-nyc1-testcluster'
+
+alias arti='export ARTIFACTORY_PASS=AKCp5fTu7ghCDPYPDqNFaiP5Ni4Ymcx2aJa5JVukGmLTJ2JzjesaLjWjE2vDwEPtVUCPaarpK && export ARTIFACTORY_USER=jay.kannaiyan@ibm.com && export | grep 'ARTIFACTORY' '
+
+alias contrast='export CONTRAST__API__API_KEY=vgy5soZn15wnVPHH539pF8F7niofbl4N && export CONTRAST__API__SERVICE_KEY=EMODO7ZF2MWAP798 && export CONTRAST__API__USER_NAME=agent_142bb017-de7e-4af7-b5b9-f0782aa6d369@Ibm'
+
+alias l='ls -laFh' #l=long list, a=show starting with . (hidden), h=human readable sizes
+alias la='ls -lAFh' #A=list all hidden except . and ..
+alias ll='ls -lFh' #long list and human readable sizes, no hidden
+alias ls='ls -G' # ls - TAB for all varibales
+alias md='mkdir -p'
+alias ip='curl https://ipinfo.io'
+alias reload='source ~/.zshrc'
+
+alias yt='youtube-dl'
+
+# ssh configs
+alias jammin='ssh jammin'
+alias kisco='ssh kisco'
+alias basement='ssh jibhi3'
+alias netcom='ssh netcom'
+alias vlad='ssh vlad'
+alias monitoring='ssh gcp1'
+
+#from zsh
+# gb='git branch'
+# gbD='git branch -D'
+# gl='git pull'
+# gcb='git checkout -b'
+# gco='git checkout'
+
+#alias ..='cd ..'
+#alias cd='cd ~'
+#alias /='cd /'
+
+######
+## oh-my-zsh aliases
+
+-='cd -'
+...=../..
+....=../../..
+.....=../../../..
+......=../../../../..
+1='cd -'
+2='cd -2'
+3='cd -3'
+4='cd -4'
+5='cd -5'
+6='cd -6'
+7='cd -7'
+8='cd -8'
+9='cd -9'
+_='sudo '
+afind='ack -il'
+arti='export ARTIFACTORY_PASS=AKCp5fTu7ghCDPYPDqNFaiP5Ni4Ymcx2aJa5JVukGmLTJ2JzjesaLjWjE2vDwEPtVUCPaarpK && export ARTIFACTORY_USER=jay.kannaiyan@ibm.com && export | grep ARTIFACTORY '
+basement='ssh jibhi3'
+cluster='echo "kubectl config current-context" && kubectl config current-context'
+cluster-dev='echo "ibmcloud ks cluster config -c ies-dev" && ibmcloud ks cluster config -c ies-dev'
+cluster-do='kubectl cluster config -c do-nyc1-k8s-do-nyc1-testcluster'
+cluster-staging='echo "ibmcloud ks cluster config -c ies-staging" && ibmcloud ks cluster config -c ies-staging'
+cluster-test='echo "ibmcloud ks cluster config -c ies-test" && ibmcloud ks cluster config -c ies-test'
+contrast='export CONTRAST__API__API_KEY=vgy5soZn15wnVPHH539pF8F7niofbl4N && export CONTRAST__API__SERVICE_KEY=EMODO7ZF2MWAP798 && export CONTRAST__API__USER_NAME=agent_142bb017-de7e-4af7-b5b9-f0782aa6d369@Ibm'
+dc='docker-compose up'
+dcb='docker-compose build'
+dcc='docker-compose config'
+dcd='docker-compose down'
+dcl='docker-compose logs -f'
+dcu='docker-compose up -d'
+dcul='docker-compose up -d && docker-compose logs -f'
+ddu='dcd && dcu'
+df='cd ~/code/ies-dashboard-frontend'
+di='docker images -a'
+dirm='docker rmi $(docker images -a -q)'
+dl='docker logs --follow'
+dps='docker ps -a'
+dpsp='docker ps -a --format "table {{.Names}}\t{{.Ports}}\t{{.Status}}\t{{.Size}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
+drm='docker rm $(docker ps -a -q)'
+ds='cd ~/code/ies-dashboard-service'
+dstop='docker stop $(docker ps -a -q)'
+dv='docker volume ls'
+dvr='docker volume rm $(docker volume ls -q)'
+egrep='egrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'
+fgrep='fgrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'
+g=git
+ga='git add'
+gaa='git add --all'
+gacm='git add-commit -m'
+gam='git am'
+gama='git am --abort'
+gamc='git am --continue'
+gams='git am --skip'
+gamscp='git am --show-current-patch'
+gap='git apply'
+gapa='git add --patch'
+gapt='git apply --3way'
+gau='git add --update'
+gav='git add --verbose'
+gb='git branch'
+gbD='git branch -D'
+gba='git branch -a'
+gbd='git branch -d'
+gbda='git branch --no-color --merged | command grep -vE "^(\+|\*|\s*($(git_main_branch)|development|develop|devel|dev)\s*$)" | command xargs -n 1 git branch -d'
+gbl='git blame -b -w'
+gbnm='git branch --no-merged'
+gbr='git branch --remote'
+gbs='git bisect'
+gbsb='git bisect bad'
+gbsg='git bisect good'
+gbsr='git bisect reset'
+gbss='git bisect start'
+gc='git commit -v'
+'gc!'='git commit -v --amend'
+gca='git commit -v -a'
+'gca!'='git commit -v -a --amend'
+gcam='git commit -a -m'
+'gcan!'='git commit -v -a --no-edit --amend'
+'gcans!'='git commit -v -a -s --no-edit --amend'
+gcb='git checkout -b'
+gcd='git checkout develop'
+gcem='git commit --allow-empty -m'
+gcf='git config --list'
+gcl='git clone --recurse-submodules'
+gclean='git clean -id'
+gcm='git checkout $(git_main_branch)'
+gcmsg='git commit -m'
+'gcn!'='git commit -v --no-edit --amend'
+gco='git checkout'
+gcount='git shortlog -sn'
+gcp='git cherry-pick'
+gcpa='git cherry-pick --abort'
+gcpc='git cherry-pick --continue'
+gcs='git commit -S'
+gcsm='git commit -s -m'
+gd='git diff'
+gdca='git diff --cached'
+gdct='git describe --tags $(git rev-list --tags --max-count=1)'
+gdcw='git diff --cached --word-diff'
+gds='git diff --staged'
+gdt='git diff-tree --no-commit-id --name-only -r'
+gdw='git diff --word-diff'
+gf='git fetch'
+gfa='git fetch --all --prune'
+gfg='git ls-files | grep'
+gfo='git fetch origin'
+gg='git gui citool'
+gga='git gui citool --amend'
+ggpull='git pull origin "$(git_current_branch)"'
+ggpur=ggu
+ggpush='git push origin "$(git_current_branch)"'
+ggsup='git branch --set-upstream-to=origin/$(git_current_branch)'
+ghh='git help'
+gignore='git update-index --assume-unchanged'
+gignored='git ls-files -v | grep "^[[:lower:]]"'
+git-svn-dcommit-push='git svn dcommit && git push github $(git_main_branch):svntrunk'
+gk='\gitk --all --branches'
+gke='\gitk --all $(git log -g --pretty=%h)'
+gl='git pull'
+glg='git log --stat'
+glgg='git log --graph'
+glgga='git log --graph --decorate --all'
+glgm='git log --graph --max-count=10'
+glgp='git log --stat -p'
+glo='git log --oneline --decorate'
+globurl='noglob urlglobber '
+glod='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'\'
+glods='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'\'' --date=short'
+glog='git log --oneline --decorate --graph'
+gloga='git log --oneline --decorate --graph --all'
+glol='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'
+glola='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --all'
+glols='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --stat'
+glp=_git_log_prettily
+glum='git pull upstream $(git_main_branch)'
+gm='git merge'
+gma='git merge --abort'
+gmom='git merge origin/$(git_main_branch)'
+gmt='git mergetool --no-prompt'
+gmtvim='git mergetool --no-prompt --tool=vimdiff'
+gmum='git merge upstream/$(git_main_branch)'
+gp='git push'
+gpd='git push --dry-run'
+gpf='git push --force-with-lease'
+'gpf!'='git push --force'
+gpo='git push origin'
+gpoat='git push origin --all && git push origin --tags'
+gpristine='git reset --hard && git clean -dffx'
+gpsup='git push --set-upstream origin $(git_current_branch)'
+gpu='git push upstream'
+gpv='git push -v'
+gr='git remote'
+gra='git remote add'
+grb='git rebase'
+grba='git rebase --abort'
+grbc='git rebase --continue'
+grbd='git rebase develop'
+grbi='git rebase -i'
+grbm='git rebase $(git_main_branch)'
+grbs='git rebase --skip'
+grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'
+grev='git revert'
+grh='git reset'
+grhh='git reset --hard'
+grm='git rm'
+grmc='git rm --cached'
+grmv='git remote rename'
+groh='git reset origin/$(git_current_branch) --hard'
+grrm='git remote remove'
+grs='git restore'
+grset='git remote set-url'
+grss='git restore --source'
+grt='cd "$(git rev-parse --show-toplevel || echo .)"'
+gru='git reset --'
+grup='git remote update'
+grv='git remote -v'
+gs='git status'
+gsb='git status -sb'
+gsd='git svn dcommit'
+gsh='git show'
+gsi='git submodule init'
+gsps='git show --pretty=short --show-signature'
+gsr='git svn rebase'
+gss='git status -s'
+gst='git status'
+gsta='git stash push'
+gstaa='git stash apply'
+gstall='git stash --all'
+gstc='git stash clear'
+gstd='git stash drop'
+gstl='git stash list'
+gstp='git stash pop'
+gsts='git stash show --text'
+gstu='git stash --include-untracked'
+gsu='git submodule update'
+gsw='git switch'
+gswc='git switch -c'
+gtl='gtl(){ git tag --sort=-v:refname -n -l "${1}*" }; noglob gtl'
+gts='git tag -s'
+gtv='git tag | sort -V'
+gunignore='git update-index --no-assume-unchanged'
+gunwip='git log -n 1 | grep -q -c "\-\-wip\-\-" && git reset HEAD~1'
+gup='git pull --rebase'
+gupa='git pull --rebase --autostash'
+gupav='git pull --rebase --autostash -v'
+gupv='git pull --rebase -v'
+gwch='git whatchanged -p --abbrev-commit --pretty=medium'
+gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"'
+history=omz_history
+hp='cd ~/code/ies-hsk-procurement-frontend'
+hr='cd ~/code/ies-hsk-registration-frontend'
+ibmk8s='ibmcloud login --apikey jIVmyyU1BEMWq5Gl0RraHftix8P3r02p_s7z2fK-Udn8'
+ies='cd ~/code'
+ip='curl https://ipinfo.io'
+jammin='ssh jammin'
+jk='cd ~/codejk'
+kisco='ssh kisco'
+l='ls -lah'
+la='ls -lAh'
+ll='ls -lh'
+ls='ls -G'
+lsa='ls -lah'
+md='mkdir -p'
+monitoring='ssh gcp1'
+n=npm
+na='npm audit'
+naf='npm audit fix'
+nc='npm ci'
+ncbs='npm run clean && npm run build && npm run start'
+netcom='ssh netcom'
+ni='npm install'
+nr='npm run'
+ns='npm run start'
+nv='npm version'
+rd=rmdir
+reload='source ~/.zshrc'
+run-help=man
+ssh1984='ssh -p 1092 jax@93.95.226.157'
+stats='docker ps -q | xargs docker stats --no-stream'
+tf=terraform
+vlad='ssh vlad'
+vsc='code .'
+which-command=whence
+ws='sudo !!'
+yt=youtube-dl
