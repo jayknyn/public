@@ -100,17 +100,12 @@ alias ds='cd ~/code/ies-dashboard-service'
 alias hr='cd ~/code/ies-hsk-registration-frontend'
 alias hp='cd ~/code/ies-hsk-procurement-frontend'
 
-alias ibmk8s='ibmcloud login --apikey jIVmyyU1BEMWq5Gl0RraHftix8P3r02p_s7z2fK-Udn8'
 alias cluster='echo "kubectl config current-context" && kubectl config current-context'
 alias cluster-dev='echo "ibmcloud ks cluster config -c ies-dev" && ibmcloud ks cluster config -c ies-dev'
 alias cluster-test='echo "ibmcloud ks cluster config -c ies-test" && ibmcloud ks cluster config -c ies-test'
 alias cluster-staging='echo "ibmcloud ks cluster config -c ies-staging" && ibmcloud ks cluster config -c ies-staging'
 
 alias cluster-do='kubectl cluster config -c do-nyc1-k8s-do-nyc1-testcluster'
-
-alias arti='export ARTIFACTORY_PASS=AKCp5fTu7ghCDPYPDqNFaiP5Ni4Ymcx2aJa5JVukGmLTJ2JzjesaLjWjE2vDwEPtVUCPaarpK && export ARTIFACTORY_USER=jay.kannaiyan@ibm.com && export | grep 'ARTIFACTORY' '
-
-alias contrast='export CONTRAST__API__API_KEY=vgy5soZn15wnVPHH539pF8F7niofbl4N && export CONTRAST__API__SERVICE_KEY=EMODO7ZF2MWAP798 && export CONTRAST__API__USER_NAME=agent_142bb017-de7e-4af7-b5b9-f0782aa6d369@Ibm'
 
 alias l='ls -laFh' #l=long list, a=show starting with . (hidden), h=human readable sizes
 alias la='ls -lAFh' #A=list all hidden except . and ..
@@ -160,14 +155,12 @@ alias monitoring='ssh gcp1'
 9='cd -9'
 _='sudo '
 afind='ack -il'
-arti='export ARTIFACTORY_PASS=AKCp5fTu7ghCDPYPDqNFaiP5Ni4Ymcx2aJa5JVukGmLTJ2JzjesaLjWjE2vDwEPtVUCPaarpK && export ARTIFACTORY_USER=jay.kannaiyan@ibm.com && export | grep ARTIFACTORY '
 basement='ssh jibhi3'
 cluster='echo "kubectl config current-context" && kubectl config current-context'
 cluster-dev='echo "ibmcloud ks cluster config -c ies-dev" && ibmcloud ks cluster config -c ies-dev'
 cluster-do='kubectl cluster config -c do-nyc1-k8s-do-nyc1-testcluster'
 cluster-staging='echo "ibmcloud ks cluster config -c ies-staging" && ibmcloud ks cluster config -c ies-staging'
 cluster-test='echo "ibmcloud ks cluster config -c ies-test" && ibmcloud ks cluster config -c ies-test'
-contrast='export CONTRAST__API__API_KEY=vgy5soZn15wnVPHH539pF8F7niofbl4N && export CONTRAST__API__SERVICE_KEY=EMODO7ZF2MWAP798 && export CONTRAST__API__USER_NAME=agent_142bb017-de7e-4af7-b5b9-f0782aa6d369@Ibm'
 dc='docker-compose up'
 dcb='docker-compose build'
 dcc='docker-compose config'
@@ -355,7 +348,6 @@ gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no
 history=omz_history
 hp='cd ~/code/ies-hsk-procurement-frontend'
 hr='cd ~/code/ies-hsk-registration-frontend'
-ibmk8s='ibmcloud login --apikey jIVmyyU1BEMWq5Gl0RraHftix8P3r02p_s7z2fK-Udn8'
 ies='cd ~/code'
 ip='curl https://ipinfo.io'
 jammin='ssh jammin'
