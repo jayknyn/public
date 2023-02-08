@@ -1,47 +1,45 @@
 # .zshrc for mac-ibm, v2.0, monterey
 
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/jay/.oh-my-zsh"
-
-ZSH_THEME="robbyrussell2"
-
+export ZSH="/Users/jay/.oh-my-zsh" # Path to your oh-my-zsh installation.
+ZSH_THEME="jax"
 export UPDATE_ZSH_DAYS=180
 COMPLETION_WAITING_DOTS="true"
 plugins=(git zsh-autosuggestions)
-
-setopt PROMPT_SUBST
-PROMPT='%m:%1~ %n%#'
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
-
 source $ZSH/oh-my-zsh.sh
 
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+# for node version manager
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# autocomplete for terraform
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
-# For gcloud cli
+
+# for gcloud cli, autocomplete
 export CLOUDSDK_PYTHON="/usr/local/opt/python@3.8/libexec/bin/python"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
-# For React Native, Android Studio
+# for React Native, Android Studio
 export ANDROID_HOME=$HOME/Library/Android/sdk 
 export PATH=$PATH:$ANDROID_HOME/emulator 
 export PATH=$PATH:$ANDROID_HOME/tools 
 export PATH=$PATH:$ANDROID_HOME/tools/bin 
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# For Helm v2
+# for Helm v2
 export PATH="/usr/local/opt/helm@2/bin:$PATH"
 
-# For GNUpg
+# for GNUpg
 export GUILE_LOAD_PATH="/usr/local/share/guile/site/3.0"
 export GUILE_LOAD_COMPILED_PATH="/usr/local/lib/guile/3.0/site-ccache"
 export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
@@ -56,38 +54,74 @@ decode() { echo -n $1 | base64 -d } # base64 decode the input
 # aliases
 unalias -a # destroy all existing aliases
 
+# load ibm aliases
+source $HOME/.config/.aliases-ibm
+
+alias newzsh='wget -O /Users/$USER/.zshrc https://raw.githubusercontent.com/jayknyn/public/release/zsh/.zshrc-mac-ibm && wget -O /Users/$USER/.oh-my-zsh/themes/jax.zsh-theme  https://raw.githubusercontent.com/jayknyn/public/release/zsh/jax-mac.zsh-theme && source ~/.zshrc'
 
 alias dps='docker ps -a'
-alias di='docker images -a'
+alias ps='docker ps -a --format "table {{.Names}}\t{{.Status}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
 alias dpsp='docker ps -a --format "table {{.Names}}\t{{.Ports}}\t{{.Status}}\t{{.Size}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
+alias di='docker images -a'
 alias dstop='docker stop $(docker ps -a -q)'
 alias drm='docker rm $(docker ps -a -q)'
 alias dirm='docker rmi $(docker images -a -q)'
+
+alias dcc='docker-compose config'
 alias dcu='docker-compose up -d'
 alias dcul='docker-compose up -d && docker-compose logs -f'
-alias dc='docker-compose up'
 alias dcd='docker-compose down'
 alias ddu='dcd && dcu'
 alias dcb='docker-compose build'
 alias dl='docker logs --follow'
 alias dcl='docker-compose logs -f'
-alias dcc='docker-compose config'
+alias dcp='docker-compose pull'
+
 alias dv='docker volume ls'
 alias dvr='docker volume rm $(docker volume ls -q)'
 alias stats='docker ps -q | xargs docker stats --no-stream'
 
-alias gc='git clone'
-alias gacm='git add-commit -m'
-alias gs='git status'
-alias gcem='git commit --allow-empty -m'
-alias gpo='git push origin'
-#alias gbo='git branch --set-upstream-to=origin/$1 $1'
-alias ies='cd ~/code'
+alias vdc='vim docker-compose.yml'
+alias rdc='rm docker-compose.yml'
+
+alias ip='curl https://ipinfo.io'
+alias reload='source ~/.zshrc'
+alias du='du -h -d 1'
+alias md='mkdir -p'
+
+alias ls='ls -G' # ls - TAB for all varibales
+alias l='ls -laFh' #l=long list, a=show starting with . (hidden), h=human readable sizes
+alias la='ls -lAFh' #A=list all hidden except . and ..
+alias ll='ls -lFh' #long list and human readable sizes, no hidden
+
+#from zsh
+alias ..='cd ..'
+alias ~='cd ~'
+alias /='cd /'
+alias ...=../..
+alias ....=../../..
+alias .....=../../../..
+alias ......=../../../../..
+
 alias jk='cd ~/codejk'
 alias vsc='code .'
-#gbo { git branch --set-upstream-to=origin/$1 $1 }
+alias jax='cd ~/codejk/jax-cloud && vsc'
 
-alias tf='terraform' 
+alias gc='git clone'
+alias gacm='git add -A && git commit -m'
+alias gs='git status'
+alias gb='git branch'
+alias gbD='git branch -D' # delete all branches
+alias gbd='git branch -d'
+alias gcb='git checkout -b'
+alias gcem='git commit --allow-empty -m'
+alias gco='git checkout'
+alias gl='git pull'
+alias gp='git push'
+alias gpo='git push origin'
+alias gbo='git branch --set-upstream-to=origin/$1 $1'
+alias diff='diff --color'
+
 alias n='npm'
 alias nr='npm run'
 alias ni='npm install'
@@ -98,28 +132,11 @@ alias naf='npm audit fix'
 alias na='npm audit'
 alias ncbs='nr clean && nr build && ns'
 alias ncbs='npm run clean && npm run build && npm run start'
-alias df='cd ~/code/ies-dashboard-frontend'
-alias ds='cd ~/code/ies-dashboard-service'
-alias hr='cd ~/code/ies-hsk-registration-frontend'
-alias hp='cd ~/code/ies-hsk-procurement-frontend'
-
-
-alias cluster='echo "kubectl config current-context" && kubectl config current-context'
-alias cluster-dev='echo "ibmcloud ks cluster config -c ies-dev" && ibmcloud ks cluster config -c ies-dev'
-alias cluster-test='echo "ibmcloud ks cluster config -c ies-test" && ibmcloud ks cluster config -c ies-test'
-alias cluster-staging='echo "ibmcloud ks cluster config -c ies-staging" && ibmcloud ks cluster config -c ies-staging'
-
-alias cluster-do='kubectl cluster config -c do-nyc1-k8s-do-nyc1-testcluster'
-
-alias l='ls -laFh' #l=long list, a=show starting with . (hidden), h=human readable sizes
-alias la='ls -lAFh' #A=list all hidden except . and ..
-alias ll='ls -lFh' #long list and human readable sizes, no hidden
-alias ls='ls -G' # ls - TAB for all varibales
-alias md='mkdir -p'
-alias ip='curl https://ipinfo.io'
-alias reload='source ~/.zshrc'
 
 alias yt='youtube-dl'
+alias t='terraform'
+alias k='kubectl'
+alias cluster-do='kubectl cluster config -c do-nyc1-k8s-do-nyc1-testcluster'
 
 # ssh configs
 alias jammin='ssh jammin'
@@ -129,4 +146,5 @@ alias netcom='ssh netcom'
 alias vlad='ssh vlad'
 alias monitoring='ssh gcp1'
 
-
+##
+cd ~/codejk

@@ -76,5 +76,13 @@ alias .....=../../../..
 alias ......=../../../../..s
 
 ##
+# if [[ docker version ]]; then
+#   ps
+# fi
 
+# if [[ uname -s = "ubuntu" ]]; then
+#   landscape-sysinfo --exclude-sysinfo-plugins=Network,Processes
+# fi
+
+# cd /opt 
 cd /opt && ps && landscape-sysinfo --exclude-sysinfo-plugins=Network,Processes

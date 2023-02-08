@@ -1,4 +1,5 @@
 # .zshrc for mac, v3.0, monterey
+
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
 export UPDATE_ZSH_DAYS=180
@@ -21,11 +22,11 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# autocomplete for terraform
+# for terraform autocomplete
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
-# autocomplete for gcloud
+# for gcloud cli, autocomplete
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 
@@ -82,7 +83,10 @@ alias ....=../../..
 alias .....=../../../..
 alias ......=../../../../..
 
-alias diff='diff --color'
+alias jk='cd ~/codejk'
+alias vsc='codium .'
+alias jax='cd ~/codejk/jax-cloud && vsc'
+
 alias gc='git clone'
 alias gacm='git add -A && git commit -m'
 alias gs='git status'
@@ -95,6 +99,24 @@ alias gco='git checkout'
 alias gl='git pull'
 alias gp='git push'
 alias gpo='git push origin'
+alias gbo='git branch --set-upstream-to=origin/$1 $1'
+alias diff='diff --color'
+
+alias n='npm'
+alias nr='npm run'
+alias ni='npm install'
+alias nc='npm ci'
+alias ns='npm run start'
+alias nv='npm version'
+alias naf='npm audit fix'
+alias na='npm audit'
+alias ncbs='nr clean && nr build && ns'
+alias ncbs='npm run clean && npm run build && npm run start'
+
+alias yt='youtube-dl'
+alias t='terraform'
+alias k='kubectl'
+alias cluster-do='kubectl cluster config -c do-nyc1-k8s-do-nyc1-testcluster'
 
 # ssh configs
 alias jammin='ssh jammin'
@@ -104,16 +126,5 @@ alias netcom='ssh netcom'
 alias vlad='ssh vlad'
 alias monitoring='ssh gcp1'
 
-alias vsc='codium .'
-alias jk='cd ~/codejk'
-alias jax='cd ~/codejk/jax-cloud && vsc'
-alias yt='youtube-dl'
-
-alias ni='npm install'
-alias nc='npm ci'
-alias nr='npm run'
-alias ns='npm run start'
-alias nb='npm run build'
-
-alias t='terraform'
-alias k='kubectl'
+##
+cd ~/codejk
