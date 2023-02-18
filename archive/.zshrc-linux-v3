@@ -1,5 +1,5 @@
-# .zshrc for linux, v4.0
-# using docker compose (compose v2)
+# .zshrc for linux, v3.0
+# using docker-compose (compose v1)
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -26,15 +26,15 @@ alias dstop='docker stop $(docker ps -a -q)'
 alias drm='docker rm $(docker ps -a -q)'
 alias dirm='docker rmi $(docker images -a -q)'
 
-alias dcc='docker compose config'
-alias dcu='docker compose up -d'
-alias dcul='docker compose up -d && docker compose logs -f'
-alias dcd='docker compose down'
+alias dcc='docker-compose config'
+alias dcu='docker-compose up -d'
+alias dcul='docker-compose up -d && docker-compose logs -f'
+alias dcd='docker-compose down'
 alias ddu='dcd && dcu'
-alias dcb='docker compose build'
+alias dcb='docker-compose build'
 alias dl='docker logs --follow'
-alias dcl='docker compose logs -f'
-alias dcp='docker compose pull'
+alias dcl='docker-compose logs -f'
+alias dcp='docker-compose pull'
 
 alias dv='docker volume ls'
 alias dvr='docker volume rm $(docker volume ls -q)'
