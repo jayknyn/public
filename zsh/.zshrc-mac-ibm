@@ -1,4 +1,5 @@
-# .zshrc for mac-ibm, v2.0, monterey
+# .zshrc for mac-ibm, v2.1, monterey
+# updating final cd and ssh
 
 export ZSH="/Users/jay/.oh-my-zsh" # Path to your oh-my-zsh installation.
 ZSH_THEME="jax"
@@ -106,6 +107,7 @@ alias ......=../../../../..
 alias jk='cd ~/codejk'
 alias vsc='code .'
 alias jax='cd ~/codejk/jax-cloud && vsc'
+alias pub='cd ~/codejk/public && vsc'
 
 alias gc='git clone'
 alias gacm='git add -A && git commit -m'
@@ -139,7 +141,8 @@ alias k='kubectl'
 alias cluster-do='kubectl cluster config -c do-nyc1-k8s-do-nyc1-testcluster'
 
 # ssh configs
-alias jammin='ssh jammin'
+alias mxayam='ssh mx-ayam'
+alias ociayam='ssh ayam'
 alias kisco='ssh kisco'
 alias basement='ssh jibhi3'
 alias netcom='ssh netcom'
@@ -147,4 +150,4 @@ alias vlad='ssh vlad'
 alias monitoring='ssh gcp1'
 
 ##
-cd ~/codejk
+cd ~/code
