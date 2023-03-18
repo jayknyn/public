@@ -114,7 +114,7 @@ alias na='npm audit'
 alias ncbs='nr clean && nr build && ns'
 alias ncbs='npm run clean && npm run build && npm run start'
 
-alias yt='youtube-dl'
+alias yt='yt-dlp --config-location ~/.config/yt-dl/config'
 alias t='terraform'
 alias k='kubectl'
 alias cluster-do='kubectl cluster config -c do-nyc1-k8s-do-nyc1-testcluster'
@@ -129,4 +129,4 @@ alias vlad='ssh vlad'
 alias monitoring='ssh gcp1'
 
 ##
-cd ~/codejk
+#cd ~/codejk
