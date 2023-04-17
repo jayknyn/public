@@ -1,5 +1,4 @@
-# .zshrc for mac-ibm, v3.0, ventura
-# updating final cd and ssh
+# .zshrc for mac-ibm, v2.0, monterey
 
 export ZSH="/Users/jay/.oh-my-zsh" # Path to your oh-my-zsh installation.
 ZSH_THEME="jax"
@@ -13,17 +12,17 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
 fi
 source $ZSH/oh-my-zsh.sh
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 # for node version manager, ventura
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-  
+
 # autocomplete for terraform
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
+
 
 # for gcloud cli, autocomplete
 # export CLOUDSDK_PYTHON="/usr/local/opt/python@3.8/libexec/bin/python"
@@ -107,7 +106,6 @@ alias ......=../../../../..
 alias jk='cd ~/codejk'
 alias vsc='code .'
 alias jax='cd ~/codejk/jax-cloud && vsc'
-alias pub='cd ~/codejk/public && vsc'
 
 alias gc='git clone'
 alias gacm='git add -A && git commit -m'
@@ -141,8 +139,7 @@ alias k='kubectl'
 alias cluster-do='kubectl cluster config -c do-nyc1-k8s-do-nyc1-testcluster'
 
 # ssh configs
-alias mxayam='ssh mx-ayam'
-alias ociayam='ssh ayam'
+alias jammin='ssh jammin'
 alias kisco='ssh kisco'
 alias basement='ssh jibhi3'
 alias netcom='ssh netcom'
@@ -150,4 +147,4 @@ alias vlad='ssh vlad'
 alias monitoring='ssh gcp1'
 
 ##
-# cd ~/code
+# cd ~/codejk
