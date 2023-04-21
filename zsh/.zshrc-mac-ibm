@@ -1,5 +1,5 @@
-# .zshrc for mac-ibm, v3.0, ventura
-# updating final cd and ssh
+# .zshrc for mac-ibm, v3.1, ventura
+# updating path
 
 export ZSH="/Users/jay/.oh-my-zsh" # Path to your oh-my-zsh installation.
 ZSH_THEME="jax"
@@ -20,7 +20,10 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-  
+
+# for IBM Detect Secrets
+export PATH=$PATH:/Users/jay/Library/Python/3.9/bin
+
 # autocomplete for terraform
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
