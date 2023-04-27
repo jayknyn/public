@@ -3,7 +3,7 @@
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
 export UPDATE_ZSH_DAYS=180
-COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="false"
 plugins=(git zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
