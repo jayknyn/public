@@ -54,3 +54,7 @@ git commit --amend --reset-author
 ```
 watch 'docker ps -a'
 ```
+
+## This repo maintenance
+
+- just pushing to release branch

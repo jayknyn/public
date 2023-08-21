@@ -1,5 +1,5 @@
-# .zshrc for mac-ibm, v3.1, ventura
-# updating path
+# .zshrc for mac-ibm, v3.2, ventura
+# add secret gen
 
 export ZSH="/Users/jay/.oh-my-zsh" # Path to your oh-my-zsh installation.
 ZSH_THEME="jax"
@@ -54,6 +54,7 @@ export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
 # bash functions
 encode() { echo -n $1 | base64 } # base64 encode the input: $ encode INPUT
 decode() { echo -n $1 | base64 -d } # base64 decode the input
+secret() { openssl rand -hex $1 } # to generate 24 hex secret $ secret 24
 
 # aliases
 unalias -a # destroy all existing aliases
