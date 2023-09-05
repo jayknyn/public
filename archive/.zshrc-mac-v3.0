@@ -1,5 +1,5 @@
-# .zshrc for personal mac, v3.2, monterey, optimont
-# 230905, explicitly setting $PATH
+# .zshrc for mac, v3.0, monterey, optimont
+# 230618
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -8,8 +8,13 @@ COMPLETION_WAITING_DOTS="false"
 plugins=(git zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
+#PROMPT='%F{208}%n%f@%M% ➜%F{226}%f%d% % %'
+#PROMPT='%(!.%{%F{green}%}.)%{$fg[green]%}%n@%{$fg[green]%}%M%{$fg_bold[red]%}➜%{$fg_bold[green]%}%p%{$fg[cyan]%}%d%{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+
+# PATH=/Users/jay/.pyenv/shims:/usr/local/bin:/usr/local/sbin:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:/usr/bin:/bin:/usr/sbin:/sbin:
+
 eval "$(/usr/local/bin/brew shellenv)" # for homebrew
-export HOMEBREW_NO_AUTO_UPDATE=1 && export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 eval "$(pyenv init --path)" # for python2
 
@@ -18,13 +23,20 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# set PATH
-export PATH=/Users/jay/.nvm/versions/node/v16.18.1/bin:/Users/jay/.pyenv/shims:/Applications/android-platform-tools/:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:
+# android platform tools for adb, fastbook
+export PATH=$PATH:/Applications/android-platform-tools/
+
+# for terraform autocomplete
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
+
+# for gcloud cli, autocomplete
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 
 # bash functions
 encode() { echo -n $1 | base64 } # base64 encode the input: $ encode INPUT
 decode() { echo -n $1 | base64 -d } # base64 decode the input
-secret() { openssl rand -hex $1 } # to generate 24 hex secret $ secret 24
 
 # aliases
 unalias -a # destroy all existing aliases
@@ -123,3 +135,15 @@ alias monitoring='ssh gcp1'
 ##
 #cd ~/codejk
 
+## archive
+#
+#PROMPT='%F{208}%n%f@%M% ➜%F{226}%f%d% % %'
+#PROMPT='%(!.%{%F{green}%}.)%{$fg[green]%}%n@%{$fg[green]%}%M%{$fg_bold[red]%}➜%{$fg_bold[green]%}%p%{$fg[cyan]%}%d%{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+#
+# for terraform autocomplete
+#autoload -U +X bashcompinit && bashcompinit
+#complete -o nospace -C /usr/local/bin/terraform terraform
+
+# for gcloud cli, autocomplete
+#source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+#source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
