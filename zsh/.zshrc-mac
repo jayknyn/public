@@ -19,7 +19,11 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # set PATH
-export PATH=/Users/jay/.nvm/versions/node/v16.18.1/bin:/Users/jay/.pyenv/shims:/Applications/android-platform-tools/:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:
+export PATH=/Users/jay/.nvm/versions/node/v16.18.1/bin:\
+/Users/jay/.pyenv/shims:\
+/Applications/android-platform-tools/:\
+/usr/local/opt/gnu-sed/libexec/gnubin:\
+/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:
 
 # bash functions
 encode() { echo -n $1 | base64 } # base64 encode the input: $ encode INPUT
