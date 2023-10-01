@@ -1,5 +1,5 @@
-# .zshrc for personal mac, v3.2, monterey, optimont
-# 230905, explicitly setting $PATH
+# .zshrc for personal mac, v3.3, monterey, optimont
+# 230930, update ssh alias
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -120,7 +120,7 @@ alias mxayam='ssh mx-ayam'
 alias ociayam='ssh ayam'
 alias kisco='ssh kisco'
 alias basement='ssh jibhi3'
-alias netcom='ssh netcom'
+alias agonda='ssh agonda'
 alias vlad='ssh vlad'
 alias monitoring='ssh gcp1'
 
