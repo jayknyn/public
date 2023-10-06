@@ -27,7 +27,7 @@
   },
   "prettier.jsxSingleQuote": true,
   "prettier.singleQuote": true,
-  "prettier.jsxBracketSameLine": true,
+  "prettier.bracketSameLine": true,
   "prettier.semi": false,
   "prettier.trailingComma": "none",
   "json.schemas": [],
@@ -35,6 +35,6 @@
   "files.associations": {
     "*.yml": "yaml"
   },
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 2,
   "security.workspace.trust.untrustedFiles": "open"
 }

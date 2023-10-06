@@ -10,15 +10,9 @@
 	safecrlf = true
 	editor = vim
 	excludesfile = /Users/$USER/.gitignore_global
-[alias]
-	add-commit = !git add -A && git commit
-	tidy = rebase -i @{upstream}..
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
 [pull]
-	rebase = preserve
+	rebase = merges
 [merge]
 	ff = false
 [status]
-	showUntrackedFiles = all
+	showUntrackedFiles = all 
