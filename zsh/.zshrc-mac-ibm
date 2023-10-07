@@ -146,7 +146,7 @@ alias cluster-do='kubectl cluster config -c do-nyc1-k8s-do-nyc1-testcluster'
 
 # ssh configs
 alias mxayam='ssh mx-ayam'
-alias ociayam='ssh ayam'
+alias ns1='ssh nserver1'
 alias kisco='ssh kisco'
 alias basement='ssh jibhi3'
 alias agonda='ssh agonda'
