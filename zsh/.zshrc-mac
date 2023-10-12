@@ -117,12 +117,13 @@ alias cluster-do='kubectl cluster config -c do-nyc1-k8s-do-nyc1-testcluster'
 
 # ssh configs
 alias mxayam='ssh mx-ayam'
-alias ns1='ssh nserver1'
+alias vlad='ssh vlad'
+alias monitoring='ssh gcp1'
 alias kisco='ssh kisco'
 alias basement='ssh jibhi3'
 alias agonda='ssh agonda'
-alias vlad='ssh vlad'
-alias monitoring='ssh gcp1'
+alias ns1='ssh nserver1'
+alias w1='ssh nworker1'
 
 ##
 #cd ~/codejk

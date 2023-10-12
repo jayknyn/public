@@ -52,6 +52,7 @@ alias du='sudo du -h --max-depth=1'
 alias dugb='sudo du -h --max-depth=1 --threshold=1GB'
 alias fw='sudo ufw status | grep ALLOW'
 alias md='mkdir -p'
+alias res='landscape-sysinfo --exclude-sysinfo-plugins=Network,Processes'
 
 alias ssr='sudo systemctl restart'
 alias sss='sudo systemctl status'
