@@ -19,7 +19,8 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # set PATH
-export PATH=/Users/jay/.nvm/versions/node/v16.18.1/bin:\
+export PATH=/Users/jay/:\
+/Users/jay/.nvm/versions/node/v16.18.1/bin:\
 /Users/jay/.pyenv/shims:\
 /Applications/android-platform-tools/:\
 /usr/local/opt/gnu-sed/libexec/gnubin:\
@@ -122,8 +123,8 @@ alias monitoring='ssh gcp1'
 alias kisco='ssh kisco'
 alias basement='ssh jibhi3'
 alias agonda='ssh agonda'
-alias ns1='ssh nserver1'
-alias w1='ssh nworker1'
+alias ns1='ssh nomad-server1'
+alias c1='ssh nomad-client1'
 
 ##
 #cd ~/codejk
