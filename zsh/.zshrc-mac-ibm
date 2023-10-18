@@ -1,5 +1,5 @@
-# .zshrc for mac-ibm, v3.2, ventura
-# add secret gen
+# .zshrc for mac-ibm, v3.3, ventura
+# update PATH for ibmid tools
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -21,8 +21,12 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+export PATH=/usr/local/opt/helm@2/bin:/Users/jay/.nvm/versions/node/v16.20.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/jay/Library/Python/3.9/bin:/Users/jay/Library/Android/sdk/emulator:/Users/jay/Library/Android/sdk/tools:/Users/jay/Library/Android/sdk/tools/bin:/Users/jay/Library/Android/sdk/platform-tools:\
+/Users/jay/Library/CloudStorage/Box-Box/1-Jay-IBM-Docs/ibmid:\
+/Users/jay/Library/Python/3.9/bin
+
 # for IBM Detect Secrets
-export PATH=$PATH:/Users/jay/Library/Python/3.9/bin
+# export PATH=$PATH:/Users/jay/Library/Python/3.9/bin
 
 # autocomplete for terraform
 autoload -U +X bashcompinit && bashcompinit
