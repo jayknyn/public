@@ -1,5 +1,5 @@
-# .zshrc for mac-ibm, v3.3, ventura
-# update PATH for ibmid tools
+# .zshrc for mac-ibm, v3.4, ventura
+# update PATH for brew cellar
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -23,7 +23,9 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH=/usr/local/opt/helm@2/bin:/Users/jay/.nvm/versions/node/v16.20.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/jay/Library/Python/3.9/bin:/Users/jay/Library/Android/sdk/emulator:/Users/jay/Library/Android/sdk/tools:/Users/jay/Library/Android/sdk/tools/bin:/Users/jay/Library/Android/sdk/platform-tools:\
 /Users/jay/Library/CloudStorage/Box-Box/1-Jay-IBM-Docs/ibmid:\
-/Users/jay/Library/Python/3.9/bin
+/Users/jay/Library/Python/3.9/bin\
+/opt/homebrew/Cellar
+
 
 # for IBM Detect Secrets
 # export PATH=$PATH:/Users/jay/Library/Python/3.9/bin
@@ -155,8 +157,8 @@ alias monitoring='ssh gcp1'
 alias kisco='ssh kisco'
 alias basement='ssh jibhi3'
 alias agonda='ssh agonda'
-alias ns1='ssh nserver1'
-alias w1='ssh nworker1'
+alias ns1='ssh nomad-server1'
+alias ns2='ssh nomad-server2'
 
 ##
 # cd ~/code
