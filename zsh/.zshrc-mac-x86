@@ -1,5 +1,5 @@
-# .zshrc for hackintosh, v3.4, monterey, optimont
-# 231018, renaming file
+# .zshrc for hackintosh, v3.5, monterey, optimont
+# 231103, alias updates
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -123,7 +123,7 @@ alias kisco='ssh kisco'
 alias basement='ssh jibhi3'
 alias agonda='ssh agonda'
 alias ns1='ssh nomad-server1'
-alias c1='ssh nomad-client1'
+alias ns2='ssh nomad-server2'
 
 ##
 #cd ~/codejk
