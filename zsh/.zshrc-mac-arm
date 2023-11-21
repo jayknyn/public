@@ -1,6 +1,6 @@
 # .zshrc for jay personal mac arm, v1.1, ventura
 ### NEED TO EDIT for arm before use
-# 231103
+# 231121
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -125,6 +125,7 @@ alias basement='ssh jibhi3'
 alias agonda='ssh agonda'
 alias ns1='ssh nomad-server1'
 alias ns2='ssh nomad-server2'
+alias ns3='ssh nomad-server3'
 
 ##
 #cd ~/codejk

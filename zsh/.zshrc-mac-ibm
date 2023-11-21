@@ -1,5 +1,5 @@
 # .zshrc for mac-ibm, v3.4, ventura
-# update PATH for brew cellar
+# 231121, update PATH for brew cellar
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -159,6 +159,7 @@ alias basement='ssh jibhi3'
 alias agonda='ssh agonda'
 alias ns1='ssh nomad-server1'
 alias ns2='ssh nomad-server2'
+alias ns3='ssh nomad-server3'
 
 ##
 # cd ~/code
