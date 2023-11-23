@@ -120,7 +120,8 @@ alias basement='ssh jibhi3'
 alias agonda='ssh agonda'
 alias ns1='ssh nomad-server1'
 alias ns2='ssh nomad-server2'
-alias ns3='ssh nomad-server3'
+alias ns21='ssh nomad-ayam21'
+alias ns31='ssh nomad-ayam31'
 
 ##
 #cd ~/codejk
