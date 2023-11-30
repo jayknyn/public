@@ -133,6 +133,8 @@ alias gl='git pull'
 alias gp='git push'
 alias gpo='git push origin'
 alias gbo='git branch --set-upstream-to=origin/$1 $1'
+alias gsu='git stash -u'
+alias gsp='git stash pop'
 alias diff='diff --color'
 
 alias n='npm'
