@@ -57,8 +57,8 @@ export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
 # aliases
 unalias -a # destroy all existing aliases
 
-# load ibm aliases
-source $HOME/.config/.aliases-ibm
+source $HOME/.config/.aliases-ibm # load ibm aliases
+source $HOME/.jax-aliases # load common aliases between linux and mac
 
 alias newzsh='wget -O /Users/$USER/.zshrc https://raw.githubusercontent.com/jayknyn/public/main/zsh/.zshrc-mac-ibm && wget -O /Users/$USER/.oh-my-zsh/themes/jax.zsh-theme https://raw.githubusercontent.com/jayknyn/public/main/zsh/jax-mac.zsh-theme && wget -O /Users/$USER/.jax-aliases https://raw.githubusercontent.com/jayknyn/public/main/zsh/.jax-aliases && source ~/.zshrc'
 
