@@ -1,0 +1,67 @@
+# common aliases for linux, mac x86, mac arm
+
+# bash functions
+encode() { echo -n $1 | base64 } # base64 encode the input: $ encode INPUT
+decode() { echo -n $1 | base64 -d } # base64 decode the input
+secret() { openssl rand -hex $1 } # to generate 24 hex secret $ secret 24
+
+alias dps='docker ps -a'
+alias ps='docker ps -a --format "table {{.Names}}\t{{.Status}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
+alias dpsp='docker ps -a --format "table {{.Names}}\t{{.Ports}}\t{{.Status}}\t{{.Size}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
+alias dpsid='docker ps -a --format "table {{.Names}}\t{{.ID}}\t{{.Status}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
+alias di='docker images -a'
+alias dstop='docker stop $(docker ps -a -q)'
+alias drm='docker rm $(docker ps -a -q)'
+alias dirm='docker rmi $(docker images -a -q)'
+
+alias dcc='dc config'
+alias dcu='dc up -d'
+alias dcul='dc up -d && dc logs -f'
+alias dcd='dc down'
+alias ddu='dcd && dcu'
+alias dcb='dc build'
+alias dcub='dc up -d --build'
+alias dl='docker logs --follow'
+alias dcl='dc logs -f'
+alias dcp='dc pull'
+
+alias dv='docker volume ls'
+alias dvr='docker volume rm $(docker volume ls -q)'
+alias stats='docker ps -q | xargs docker stats --no-stream'
+
+alias vdc='vim docker-compose.yml'
+alias rdc='rm docker-compose.yml'
+
+alias ip='curl https://ipinfo.io'
+alias reload='source ~/.zshrc'
+
+alias md='mkdir -p'
+
+alias l='ls -laFh' #l=long list, a=show starting with . (hidden), h=human readable sizes
+alias la='ls -lAFh' #A=list all hidden except . and ..
+alias ll='ls -lFh' #long list and human readable sizes, no hidden
+
+alias ~='cd ~'
+alias /='cd /'
+alias ..='cd ..'
+alias ...=../..
+alias ....=../../..
+alias .....=../../../..
+
+alias gc='git clone'
+alias gacm='git add -A && git commit -m'
+alias gs='git status'
+alias gb='git branch'
+alias gbD='git branch -D' # delete all branches
+alias gbd='git branch -d'
+alias gcb='git checkout -b'
+alias gcem='git commit --allow-empty -m'
+alias gco='git checkout'
+alias gl='git pull'
+alias gp='git push'
+alias gpo='git push origin'
+alias gbo='git branch --set-upstream-to=origin/$1 $1'
+alias gsu='git stash -u'
+alias gsp='git stash pop'
+alias diff='diff --color'
+
