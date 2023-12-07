@@ -1,4 +1,4 @@
-# .zshrc for mac-ibm, v5.0, ventura
+# .zshrc for mac-ibm (m1 arm), v5.0, ventura
 # 231204, using .jax-aliases
 
 export ZSH=$HOME/.oh-my-zsh
