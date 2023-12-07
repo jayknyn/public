@@ -1,6 +1,5 @@
 # .zshrc for jay personal macbook air (m2 arm), v5.0, sonoma
-### NEED TO EDIT for arm before use
-# 231204, using .jax-aliases
+# 231207, using .jax-aliases
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -9,29 +8,23 @@ COMPLETION_WAITING_DOTS="false"
 plugins=(git zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
-eval "$(/usr/local/bin/brew shellenv)" # for homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)" # for homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1 && export HOMEBREW_NO_ANALYTICS=1
-
-eval "$(pyenv init --path)" # for python2
 
 # node version manager, $ mkdir ~/.nvm
 export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # set PATH
-export PATH=/Users/jay/.nvm/versions/node/v16.18.1/bin:\
-  /Users/jay/.pyenv/shims:\
-  /Applications/android-platform-tools/:\
-  /usr/local/opt/gnu-sed/libexec/gnubin:\
-  /usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:
 
 # aliases
 unalias -a # destroy all existing aliases
 
-source $HOME/.jax-aliases # load common aliases between linux and mac
+source $HOME/.jax-aliases
 
-alias newzsh='wget -O /Users/$USER/.zshrc https://raw.githubusercontent.com/jayknyn/public/main/zsh/.zshrc-mac-arm && wget -O /Users/$USER/.oh-my-zsh/themes/jax.zsh-theme https://raw.githubusercontent.com/jayknyn/public/main/zsh/jax-mac.zsh-theme && wget -O /Users/$USER/.oh-my-zsh/themes/.jax-aliases https://raw.githubusercontent.com/jayknyn/public/main/zsh/.jax-aliases && source ~/.zshrc'
+alias newzsh='wget -O /Users/$USER/.zshrc https://raw.githubusercontent.com/jayknyn/public/main/zsh/.zshrc-mac-arm && wget -O /Users/$USER/.oh-my-zsh/themes/jax.zsh-theme https://raw.githubusercontent.com/jayknyn/public/main/zsh/jax-mac.zsh-theme && wget -O /Users/$USER/.jax-aliases https://raw.githubusercontent.com/jayknyn/public/main/zsh/.jax-aliases && source ~/.zshrc'
 
 alias ls='ls -G' # ls - TAB for all varibales
 
@@ -55,7 +48,6 @@ alias naf='npm audit fix'
 
 alias yt='yt-dlp --config-location ~/.config/yt-dl/config'
 
-# ssh configs
 alias mxayam='ssh mx-ayam'
 alias vlad='ssh vlad'
 alias monitoring='ssh gcp1'
@@ -69,4 +61,3 @@ alias ns31='ssh nomad-ayam31'
 
 ##
 #cd ~/codejk
-

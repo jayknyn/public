@@ -15,26 +15,23 @@
   "editor.bracketPairColorization.enabled": true,
   "update.showReleaseNotes": false,
   "update.mode": "manual",
-  "diffEditor.ignoreTrimWhitespace": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "git.path": "",
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.jsxSingleQuote": true,
-  "prettier.singleQuote": true,
-  "prettier.bracketSameLine": true,
+  "prettier.singleQuote": false,
+  "prettier.jsxBracketSameLine": true,
   "prettier.semi": false,
   "prettier.trailingComma": "none",
   "json.schemas": [],
   "editor.fontLigatures": null,
   "files.associations": {
-    "*.yml": "yaml"
+    "*.yml": "yaml",
+    "*.sieve": "shellscript"
   },
   "window.zoomLevel": 2,
-  "security.workspace.trust.untrustedFiles": "open"
+  "security.workspace.trust.untrustedFiles": "open",
+  "thunder-client.htmlView": "Raw Html",
+  "editor.largeFileOptimizations": false
 }
