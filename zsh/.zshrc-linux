@@ -1,5 +1,5 @@
-# .zshrc for linux servers, v5.1
-# 231225, using if else for hashi
+# .zshrc for linux servers, v5.2
+# 231225, exec zsh instead of source
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -13,7 +13,7 @@ unalias -a # destroy all existing aliases
 
 source /home/$USER/.jax-aliases # load common aliases between linux and mac
 
-alias newzsh='wget -O /home/$USER/.zshrc https://raw.githubusercontent.com/jayknyn/public/main/zsh/.zshrc-linux && wget -O /home/$USER/.oh-my-zsh/themes/jax.zsh-theme https://raw.githubusercontent.com/jayknyn/public/main/zsh/jax-linux.zsh-theme && wget -O /home/$USER/.jax-aliases https://raw.githubusercontent.com/jayknyn/public/main/zsh/.jax-aliases && source ~/.zshrc'
+alias newzsh='wget -O /home/$USER/.zshrc https://raw.githubusercontent.com/jayknyn/public/main/zsh/.zshrc-linux && wget -O /home/$USER/.oh-my-zsh/themes/jax.zsh-theme https://raw.githubusercontent.com/jayknyn/public/main/zsh/jax-linux.zsh-theme && wget -O /home/$USER/.jax-aliases https://raw.githubusercontent.com/jayknyn/public/main/zsh/.jax-aliases && exec zsh'
 
 alias ls='ls --color=auto' # ls - TAB for all varibales
 
