@@ -1,14 +1,17 @@
-# common aliases for linux, mac x86, mac arm
+# common aliases for linux, mac x86, mac arm, v2
+# 231225
 
 # bash functions
 encode() { echo -n $1 | base64 } # base64 encode the input: $ encode INPUT
 decode() { echo -n $1 | base64 -d } # base64 decode the input
 secret() { openssl rand -hex $1 } # to generate 24 hex secret $ secret 24
+de() { docker exec -it $1 sh } # docker exec into container $ de <container-id>
+count() { ls -A $1 | wc -l }
 
 alias dps='docker ps -a'
 alias ps='docker ps -a --format "table {{.Names}}\t{{.Status}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
+alias ps2='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
 alias dpsp='docker ps -a --format "table {{.Names}}\t{{.Ports}}\t{{.Status}}\t{{.Size}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
-alias dpsid='docker ps -a --format "table {{.Names}}\t{{.ID}}\t{{.Status}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
 alias di='docker images -a'
 alias dstop='docker stop $(docker ps -a -q)'
 alias drm='docker rm $(docker ps -a -q)'
