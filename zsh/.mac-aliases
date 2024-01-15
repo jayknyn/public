@@ -1,0 +1,36 @@
+# common aliases for mac: x86, arm | v1
+# 240115
+
+alias ls='ls -G' # ls - TAB for all varibales
+
+alias dc='docker-compose'
+
+alias du='du -h -d 1'
+
+alias jk='cd ~/codejk'
+alias jax='cd ~/codejk/jax-cloud && vsc'
+alias pub='cd ~/codejk/public && vsc'
+
+alias n='npm'
+alias nr='npm run'
+alias ni='npm install'
+alias nc='npm ci'
+alias ns='npm run start'
+alias nv='npm version'
+alias na='npm audit'
+alias naf='npm audit fix'
+
+alias yt='yt-dlp --config-location ~/.config/yt-dl/config'
+alias ytv='yt-dlp --config-location ~/.config/yt-dl/config-video'
+
+# ssh configs
+alias mxayam='ssh mx-ayam'
+alias vlad='ssh vlad'
+alias monitoring='ssh gcp1'
+alias kisco='ssh kisco'
+alias basement='ssh jibhi3'
+alias agonda='ssh agonda'
+alias ns1='ssh nomad-server1'
+alias ns2='ssh nomad-server2'
+alias ns21='ssh nomad-ayam21'
+alias ns31='ssh nomad-ayam31'
