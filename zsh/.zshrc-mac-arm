@@ -29,6 +29,8 @@ alias newzsh='wget -O /Users/$USER/.zshrc https://raw.githubusercontent.com/jayk
 
 alias vsc='codium .'
 
+alias zshversion='v5.1'
+
 ## config
 # cd ~/codejk
 # nvm use 18

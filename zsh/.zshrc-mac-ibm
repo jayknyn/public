@@ -65,5 +65,7 @@ alias newzsh='wget -O /Users/$USER/.zshrc https://raw.githubusercontent.com/jayk
 
 alias vsc='code .'
 
+alias zshversion='v5.1'
+
 ## config
 nvm use 18
