@@ -1,4 +1,4 @@
-# .zshrc for hackintosh, v5.1, monterey, optimont
+# .zshrc for hackintosh, v5.2, monterey, optimont
 # 240115, adding .mac-aliases
 
 export ZSH=$HOME/.oh-my-zsh
@@ -18,8 +18,8 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# set PATH
-export PATH=/Users/jay/.nvm/versions/node/v16.18.1/bin:/Users/jay/.pyenv/shims:/Applications/android-platform-tools:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:
+# set PATH, testing for gnu: /usr/local/opt/gnu-sed/libexec/gnubin:
+export PATH=/Users/jay/.nvm/versions/node/v16.18.1/bin:/Users/jay/.pyenv/shims:/Applications/android-platform-tools:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:
 
 ## aliases
 unalias -a # destroy all existing aliases
@@ -31,7 +31,7 @@ alias newzsh='wget -O /Users/$USER/.zshrc https://raw.githubusercontent.com/jayk
 
 alias vsc='codium .'
 
-alias zshversion='v5.1'
+alias zshversion='v5.2'
 
 ## config
 # cd ~/codejk

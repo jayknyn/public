@@ -4,6 +4,7 @@
 alias ls='ls -G' # ls - TAB for all varibales
 
 alias dc='docker-compose'
+alias sed='gsed'
 
 alias du='du -h -d 1'
 

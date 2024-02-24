@@ -28,7 +28,6 @@ source $HOME/.mac-aliases # load common aliases between mac
 alias newzsh='wget -O /Users/$USER/.zshrc https://raw.githubusercontent.com/jayknyn/public/main/zsh/.zshrc-mac-arm && wget -O /Users/$USER/.oh-my-zsh/themes/jax.zsh-theme https://raw.githubusercontent.com/jayknyn/public/main/zsh/jax-mac.zsh-theme && wget -O /Users/$USER/.jax-aliases https://raw.githubusercontent.com/jayknyn/public/main/zsh/.jax-aliases && wget -O /Users/$USER/.mac-aliases https://raw.githubusercontent.com/jayknyn/public/main/zsh/.mac-aliases && source ~/.zshrc'
 
 alias vsc='codium .'
-alias sed='gsed'
 
 alias zshversion='v5.2'
 
