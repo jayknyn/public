@@ -1,5 +1,5 @@
 # .zshrc for mac-ibm (m1 arm), v5.2, ventura
-# 240115, adding .mac-aliases
+# 240224, cleaning up PATH, adding python3.12
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -21,14 +21,19 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-export PATH=/usr/local/opt/helm@2/bin:/Users/jay/.nvm/versions/node/v16.20.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/jay/Library/Python/3.9/bin:/Users/jay/Library/Android/sdk/emulator:/Users/jay/Library/Android/sdk/tools:/Users/jay/Library/Android/sdk/tools/bin:/Users/jay/Library/Android/sdk/platform-tools:\
-/Users/jay/Library/CloudStorage/Box-Box/1-Jay-IBM-Docs/ibmid:\
-/Users/jay/Library/Python/3.9/bin:\
-/opt/homebrew/Cellar
+export PATH=/Users/jay/.nvm/versions/node/v16.20.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/jay/Library/Python/3.9/bin:/Users/jay/Library/CloudStorage/Box-Box/1-Jay-IBM-Docs/ibmid:
 
+# add to PATH for apple security? not sure
+# /var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:
 
-# for IBM Detect Secrets
-# export PATH=$PATH:/Users/jay/Library/Python/3.9/bin
+# add to PATH for React Native, Android Studio
+# /Users/jay/Library/Android/sdk/emulator:/Users/jay/Library/Android/sdk/tools:/Users/jay/Library/Android/sdk/tools/bin:/Users/jay/Library/Android/sdk/platform-tools:
+
+# add to PATH for Helm v2
+# /usr/local/opt/helm@2/bin:
+
+# add to PATH for IBM Detect Secrets
+# /Users/jay/Library/Python/3.9/bin:
 
 # autocomplete for terraform
 autoload -U +X bashcompinit && bashcompinit
@@ -38,16 +43,6 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 # export CLOUDSDK_PYTHON="/usr/local/opt/python@3.8/libexec/bin/python"
 # source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 # source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-
-# for React Native, Android Studio
-export ANDROID_HOME=$HOME/Library/Android/sdk 
-export PATH=$PATH:$ANDROID_HOME/emulator 
-export PATH=$PATH:$ANDROID_HOME/tools 
-export PATH=$PATH:$ANDROID_HOME/tools/bin 
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-# for Helm v2
-export PATH="/usr/local/opt/helm@2/bin:$PATH"
 
 # for GNUpg
 export GUILE_LOAD_PATH="/usr/local/share/guile/site/3.0"
@@ -64,6 +59,7 @@ source $HOME/.mac-aliases # load common aliases between mac
 alias newzsh='wget -O /Users/$USER/.zshrc https://raw.githubusercontent.com/jayknyn/public/main/zsh/.zshrc-mac-ibm && wget -O /Users/$USER/.oh-my-zsh/themes/jax.zsh-theme https://raw.githubusercontent.com/jayknyn/public/main/zsh/jax-mac.zsh-theme && wget -O /Users/$USER/.jax-aliases https://raw.githubusercontent.com/jayknyn/public/main/zsh/.jax-aliases && wget -O /Users/$USER/.mac-aliases https://raw.githubusercontent.com/jayknyn/public/main/zsh/.mac-aliases && source ~/.zshrc'
 
 alias vsc='code .'
+alias python='python3.12'
 
 alias zshversion='v5.2'
 
