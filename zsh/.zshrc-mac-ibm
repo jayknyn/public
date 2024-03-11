@@ -60,7 +60,7 @@ alias newzsh='wget -O /Users/$USER/.zshrc https://raw.githubusercontent.com/jayk
 
 alias vsc='code .'
 alias python='python3.12'
-alias dsc='detect-secrets scan --update .secrets.baseline'
+alias dss='detect-secrets scan --update .secrets.baseline'
 alias dsa='detect-secrets audit .secrets.baseline'
 
 alias zshversion='v5.3'
