@@ -1,5 +1,5 @@
-# .zshrc for mac-ibm (m1 arm), v5.2, ventura
-# 240224, cleaning up PATH, adding python3.12
+# .zshrc for mac-ibm (m1 arm), v5.3, ventura
+# 240311, aliases
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -60,8 +60,10 @@ alias newzsh='wget -O /Users/$USER/.zshrc https://raw.githubusercontent.com/jayk
 
 alias vsc='code .'
 alias python='python3.12'
+alias dsc='detect-secrets scan --update .secrets.baseline'
+alias dsa='detect-secrets audit .secrets.baseline'
 
-alias zshversion='v5.2'
+alias zshversion='v5.3'
 
 ## config
 nvm use 18
