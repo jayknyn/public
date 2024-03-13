@@ -1,5 +1,5 @@
 # .zshrc for mac-ibm (m1 arm), v5.3, ventura
-# 240311, aliases
+# 240312, zsh_compdump
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -11,6 +11,7 @@ ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 source $ZSH/oh-my-zsh.sh
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
