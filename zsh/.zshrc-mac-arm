@@ -34,4 +34,4 @@ alias zshversion='v5.3'
 
 ## config
 # cd ~/codejk
-# nvm use 18
+nvm use 18
