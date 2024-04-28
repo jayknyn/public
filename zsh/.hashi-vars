@@ -1,6 +1,7 @@
 export HASHI_NODE=true
 
 export NOMAD_TOKEN=`cat /opt/nomad/nomad-token.json | jq -r ".SecretID"`
+
 export CONSUL_HTTP_TOKEN=`cat /opt/consul/acl-token-bootstrap.json | jq -r ".SecretID"`
-# update vault command when init json structure is known for root token
-export VAULT_TOKEN = `cat /opt/vault/vault-token`
+
+export VAULT_TOKEN=`cat /opt/vault/vault-key-shares-root-token.json | jq -r ".root_token"`
