@@ -33,7 +33,7 @@ alias el='docker exec mailserver setup email list'
 
 alias res='landscape-sysinfo --exclude-sysinfo-plugins=Network,Processes'
 alias fw='sudo ufw status | grep ALLOW'
-alias ns='netstat -tlpn | awk '{print $4}' | sort -n'
+alias ns='netstat -tlpn | awk '\''{print $4}'\'' | sort -n'
 
 alias ssr='sudo systemctl restart'
 alias sss='sudo systemctl status'
