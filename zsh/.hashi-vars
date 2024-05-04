@@ -5,3 +5,14 @@ export NOMAD_TOKEN=`cat /opt/nomad/nomad-token.json | jq -r ".SecretID"`
 export CONSUL_HTTP_TOKEN=`cat /opt/consul/acl-token-bootstrap.json | jq -r ".SecretID"`
 
 export VAULT_TOKEN=`cat /opt/vault/vault-key-shares-root-token.json | jq -r ".root_token"`
+
+export VAULT_ADDR=https://active.vault.service.consul:8200
+export VAULT_CACERT=/opt/vault/certs/ca.cert.pem
+export VAULT_CLIENT_CERT=/opt/vault/certs/vault.cert.pem
+export VAULT_CLIENT_KEY=/opt/vault/certs/vault.key.pem
+
+# add this line to /etc/hosts: <private-ip> hashinode, ex: 10.0.0.44 hashinode
+export NOMAD_ADDR=https://hashinode:4646
+export NOMAD_CACERT="/opt/nomad/certs/nomad-server-ca.cert.pem"
+export NOMAD_CLIENT_CERT="/opt/nomad/certs/nomad-cli.cert.pem"
+export NOMAD_CLIENT_KEY="/opt/nomad/certs/nomad-cli.key.pem"
