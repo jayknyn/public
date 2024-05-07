@@ -1,6 +1,5 @@
 # .zshrc for linux servers, version in first alias
-# 240506, remove consul addr
-# TODO: add .hashi-vars to newzsh once finalized tls on all nodes
+# 240506, adding .hashi-vars
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -16,11 +15,9 @@ source $ZSH/oh-my-zsh.sh
 # aliases 
 unalias -a # destroy all existing aliases
 
-alias zshversion='echo zshrc=v5.8'
+alias zshversion='echo zshrc=v5.9'
 
 source /home/$USER/.jax-aliases # load common aliases between linux and mac
-
-alias newzsh='wget -O /home/$USER/.zshrc https://raw.githubusercontent.com/jayknyn/public/main/zsh/.zshrc-linux && wget -O /home/$USER/.oh-my-zsh/themes/jax.zsh-theme https://raw.githubusercontent.com/jayknyn/public/main/zsh/jax-linux.zsh-theme && wget -O /home/$USER/.jax-aliases https://raw.githubusercontent.com/jayknyn/public/main/zsh/.jax-aliases && exec zsh'
 
 alias ls='ls --color=auto' # ls - TAB for all varibales
 
@@ -51,6 +48,8 @@ if [[ -f "$FILE" ]]; then
   echo "This is a hashi node."
   source $FILE
 
+  alias newzsh='wget -O /home/$USER/.zshrc https://raw.githubusercontent.com/jayknyn/public/main/zsh/.zshrc-linux && wget -O /home/$USER/.oh-my-zsh/themes/jax.zsh-theme https://raw.githubusercontent.com/jayknyn/public/main/zsh/jax-linux.zsh-theme && wget -O /home/$USER/.jax-aliases https://raw.githubusercontent.com/jayknyn/public/main/zsh/.jax-aliases && wget -O /home/$USER/.hashi-vars https://raw.githubusercontent.com/jayknyn/public/main/zsh/.hashi-vars && exec zsh'
+
   alias jp='nomad job plan'
   alias jr='nomad job run'
   alias js='nomad job stop'
@@ -67,5 +66,7 @@ if [[ -f "$FILE" ]]; then
 
   cd /opt && ps2 && landscape-sysinfo --exclude-sysinfo-plugins=Network,Processes && zshversion
 else
+  alias newzsh='wget -O /home/$USER/.zshrc https://raw.githubusercontent.com/jayknyn/public/main/zsh/.zshrc-linux && wget -O /home/$USER/.oh-my-zsh/themes/jax.zsh-theme https://raw.githubusercontent.com/jayknyn/public/main/zsh/jax-linux.zsh-theme && wget -O /home/$USER/.jax-aliases https://raw.githubusercontent.com/jayknyn/public/main/zsh/.jax-aliases && exec zsh'
+
   cd /opt && ps && landscape-sysinfo --exclude-sysinfo-plugins=Network,Processes && zshversion
 fi
