@@ -1,4 +1,4 @@
-# .zshrc for linux servers, v5.8
+# .zshrc for linux servers, version in first alias
 # 240506, remove consul addr
 # TODO: add .hashi-vars to newzsh once finalized tls on all nodes
 
@@ -16,7 +16,7 @@ source $ZSH/oh-my-zsh.sh
 # aliases 
 unalias -a # destroy all existing aliases
 
-alias zshversion='v5.8'
+alias zshversion='echo zshrc=v5.8'
 
 source /home/$USER/.jax-aliases # load common aliases between linux and mac
 
@@ -65,7 +65,7 @@ if [[ -f "$FILE" ]]; then
 
   echo "Hashi vars loaded."
 
-  cd /opt && ps2 && landscape-sysinfo --exclude-sysinfo-plugins=Network,Processes
+  cd /opt && ps2 && landscape-sysinfo --exclude-sysinfo-plugins=Network,Processes && zshversion
 else
-  cd /opt && ps && landscape-sysinfo --exclude-sysinfo-plugins=Network,Processes
+  cd /opt && ps && landscape-sysinfo --exclude-sysinfo-plugins=Network,Processes && zshversion
 fi
