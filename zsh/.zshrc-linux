@@ -55,8 +55,8 @@ if [[ -f "$FILE" ]]; then
   alias jr='nomad job run'
   alias js='nomad job stop'
   alias vs='vault status'
-  alias cdc='cd /opt/nomad'
-  alias cdn='cd /opt/consul'
+  alias cdc='cd /opt/consul'
+  alias cdn='cd /opt/nomad'
   alias cdv='cd /opt/vault'
   alias cdh='cd /opt/hashi-template'
 
