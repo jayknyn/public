@@ -1,6 +1,6 @@
-# .zshrc for linux servers, v5.7
-# 240503, remove nomad and vault addr
-# TODO: add .hashi-vars to newzsh once vault init json is known
+# .zshrc for linux servers, v5.8
+# 240506, remove consul addr
+# TODO: add .hashi-vars to newzsh once finalized tls on all nodes
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -16,7 +16,7 @@ source $ZSH/oh-my-zsh.sh
 # aliases 
 unalias -a # destroy all existing aliases
 
-alias zshversion='v5.7'
+alias zshversion='v5.8'
 
 source /home/$USER/.jax-aliases # load common aliases between linux and mac
 
@@ -55,9 +55,13 @@ if [[ -f "$FILE" ]]; then
   alias jr='nomad job run'
   alias js='nomad job stop'
   alias vs='vault status'
+  alias cdc='cd /opt/nomad'
+  alias cdn='cd /opt/consul'
+  alias cdv='cd /opt/vault'
+  alias cdh='cd /opt/hashi-template'
 
   PRIVATE_IP=$(hostname -I | awk '{print $1}')
-  export CONSUL_HTTP_ADDR=$PRIVATE_IP:8500
+  export PRIVATE_IP=$PRIVATE_IP
 
   echo "Hashi vars loaded."
 
