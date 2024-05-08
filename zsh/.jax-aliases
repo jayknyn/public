@@ -1,11 +1,12 @@
 # common aliases for linux, mac x86, mac arm, v2
-# 231225
+# 240507
 
 # bash functions
 encode() { echo -n $1 | base64 } # base64 encode the input: $ encode INPUT
 decode() { echo -n $1 | base64 -d } # base64 decode the input
 secret() { openssl rand -hex $1 } # to generate 24 hex secret $ secret 24
 de() { docker exec -it $1 sh } # docker exec into container $ de <container-id>
+deb() { docker exec -it "$1" bash; }
 count() { ls -A $1 | wc -l }
 
 alias dps='docker ps -a'
