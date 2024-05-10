@@ -35,7 +35,7 @@ alias newzsh='wget -O /Users/$USER/.zshrc https://raw.githubusercontent.com/jayk
 
 alias vsc='codium .'
 alias jp='nomad job plan'
-alias jr='nomad job run'
+alias jr='nomad job run -verbose'
 alias js='nomad job stop'
 
 cd /Users/jay && zshversion
