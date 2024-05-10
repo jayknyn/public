@@ -38,7 +38,7 @@ alias jp='nomad job plan'
 alias jr='nomad job run -verbose'
 alias js='nomad job stop'
 
-cd /Users/jay && zshversion
+zshversion
 
 ## config
 # cd ~/codejk
