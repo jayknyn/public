@@ -1,5 +1,5 @@
-# .zshrc for jay personal macbook air (m2 arm), v5.3, sonoma
-# 240312, zsh_compdump
+# .zshrc for jay personal macbook air (m2 arm, sonoma), version in first alias
+# 240517, 
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -23,6 +23,8 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:
 ## aliases
 unalias -a # destroy all existing aliases
 
+alias zshversion='echo zshrc=v5.4'
+
 source $HOME/.jax-aliases # load common aliases between linux and mac
 source $HOME/.mac-aliases # load common aliases between mac
 
@@ -30,8 +32,5 @@ alias newzsh='wget -O /Users/$USER/.zshrc https://raw.githubusercontent.com/jayk
 
 alias vsc='codium .'
 
-alias zshversion='v5.3'
-
-## config
-# cd ~/codejk
-nvm use 18
+## shell config
+zshversion && nvm use 18
