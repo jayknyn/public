@@ -18,4 +18,4 @@ export NOMAD_CACERT=/opt/nomad/certs/nomad-server-ca.cert.pem
 export NOMAD_CLIENT_CERT=/opt/nomad/certs/nomad-cli.cert.pem
 export NOMAD_CLIENT_KEY=/opt/nomad/certs/nomad-cli.key.pem
 
-# add this line to /etc/hosts: <private-ip> server.global.nomad server.dc1.consul, ex: 10.0.0.44 server.global.nomad server.dc1.consul
+# add this line to /etc/hosts: <private-ip> server.global.nomad server.dc1.consul server.vault, ex: 10.0.0.44 server.global.nomad server.dc1.consul server.vault
