@@ -7,7 +7,7 @@ export CONSUL_CLIENT_CERT=/opt/consul/certs/consul-cli.cert.pem
 export CONSUL_CLIENT_KEY=/opt/consul/certs/consul-cli.key.pem
 
 export VAULT_TOKEN=`cat /opt/vault/vault-key-shares-root-token.json | jq -r ".root_token"`
-export VAULT_ADDR=https://active.vault.service.consul:8200
+export VAULT_ADDR=https://server.vault:8200
 export VAULT_CACERT=/opt/vault/certs/ca.cert.pem
 export VAULT_CLIENT_CERT=/opt/vault/certs/vault.cert.pem
 export VAULT_CLIENT_KEY=/opt/vault/certs/vault.key.pem
