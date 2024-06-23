@@ -69,9 +69,9 @@ if [[ -f "$FILE" ]]; then
 
   echo "Hashi vars loaded."
 
-  cd /opt && ps2 && landscape-sysinfo --exclude-sysinfo-plugins=Network,Processes && zshversion
+  cd /opt && dp && landscape-sysinfo --exclude-sysinfo-plugins=Network,Processes && zshversion
 else
   alias newzsh='wget -O /home/$USER/.zshrc https://raw.githubusercontent.com/jayknyn/public/main/zsh/.zshrc-linux && wget -O /home/$USER/.oh-my-zsh/themes/jax.zsh-theme https://raw.githubusercontent.com/jayknyn/public/main/zsh/jax-linux.zsh-theme && wget -O /home/$USER/.jax-aliases https://raw.githubusercontent.com/jayknyn/public/main/zsh/.jax-aliases && exec zsh'
 
-  cd /opt && ps && landscape-sysinfo --exclude-sysinfo-plugins=Network,Processes && zshversion
+  cd /opt && dps && landscape-sysinfo --exclude-sysinfo-plugins=Network,Processes && zshversion
 fi
