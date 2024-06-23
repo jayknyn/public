@@ -1,5 +1,5 @@
 # common aliases for linux, mac x86, mac arm, v2
-# 240507
+# 240622
 
 # bash functions
 encode() { echo -n $1 | base64 } # base64 encode the input: $ encode INPUT
@@ -9,9 +9,9 @@ de() { docker exec -it $1 sh } # docker exec into container $ de <container-id>
 deb() { docker exec -it "$1" bash; }
 count() { ls -A $1 | wc -l }
 
-alias dps='docker ps -a'
-alias ps='docker ps -a --format "table {{.Names}}\t{{.Status}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
-alias ps2='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
+alias dp='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
+alias dps='docker ps -a --format "table {{.Names}}\t{{.Status}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
+alias dpsa='docker ps -a'
 alias dpsp='docker ps -a --format "table {{.Names}}\t{{.Ports}}\t{{.Status}}\t{{.Size}}\t{{.Image}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1 )'
 alias di='docker images -a'
 alias dstop='docker stop $(docker ps -a -q)'
