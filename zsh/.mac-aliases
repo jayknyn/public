@@ -1,5 +1,5 @@
-# common aliases for mac: x86, arm | v1
-# 240115
+# common aliases for mac: x86, arm | v2
+# 240630
 
 alias ls='ls -G' # ls - TAB for all varibales
 
@@ -15,13 +15,15 @@ alias pub='cd ~/codejk/public && vsc'
 alias n='npm'
 alias nr='npm run'
 alias ni='npm install'
+alias nid='npm install --save-dev'
+alias nu='npm uninstall'
 alias nc='npm ci'
 alias ns='npm run start'
+alias nd='npm run dev'
+alias nb='npm run build'
 alias nv='node -v'
 alias na='npm audit'
 alias naf='npm audit fix'
-alias nui='npm uninstall'
-# alias nid='npm install --save-dev'
 
 alias yt='yt-dlp --config-location ~/.config/yt-dl/config'
 alias ytv='yt-dlp --config-location ~/.config/yt-dl/config-video'
