@@ -1,5 +1,5 @@
 # .zshrc for hackintosh, ventura, optimac, version in first alias
-# 240517, adding hashivars
+# 240705, adding psql to path
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -20,12 +20,12 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # set PATH, testing for gnu: /usr/local/opt/gnu-sed/libexec/gnubin:
-export PATH=/Users/jay/.nvm/versions/node/v16.18.1/bin:/Users/jay/.pyenv/shims:/Applications/android-platform-tools:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:
+export PATH=/Users/jay/.nvm/versions/node/v18.18.2/bin:/Users/jay/.pyenv/shims:/Applications/android-platform-tools:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/opt/postgresql@16/bin
 
 ## aliases
 unalias -a # destroy all existing aliases
 
-alias zshversion='echo zshrc=v5.5'
+alias zshversion='echo zshrc=v5.6'
 
 source $HOME/.jax-aliases # load common aliases between linux and mac
 source $HOME/.mac-aliases # load common aliases between mac
