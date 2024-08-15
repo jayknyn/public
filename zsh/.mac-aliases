@@ -39,3 +39,14 @@ alias ns1='ssh nomad-server1'
 alias ns2='ssh nomad-server2'
 alias ns21='ssh nomad-ayam21'
 alias ns31='ssh nomad-ayam31'
+
+# nomad
+alias jp='nomad job plan'
+alias jr='nomad job run -verbose'
+alias js='nomad job stop'
+
+# terraform
+alias tf='terraform'
+alias tfp='tf plan'
+alias tfa='tf apply'
+alias tfd='tf destroy'
