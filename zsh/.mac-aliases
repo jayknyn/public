@@ -6,6 +6,7 @@ alias ls='ls -G' # ls - TAB for all varibales
 alias dc='docker-compose'
 alias sed='gsed'
 
+# can modify, replace -h with -m to see all in MB, use -t to get modify time
 alias du='du -h -d 1'
 
 alias jk='cd ~/codejk'
