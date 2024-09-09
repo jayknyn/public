@@ -1,5 +1,5 @@
 # common aliases for mac: x86, arm | v2
-# 240630
+# 240909
 
 alias ls='ls -G' # ls - TAB for all varibales
 

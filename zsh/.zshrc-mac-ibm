@@ -1,5 +1,5 @@
-# .zshrc for mac-ibm (m1 arm), ventura, zshversion in first alias
-# 240515, zsh_compdump, updating nvm
+# .zshrc for mac-ibm (m1 arm), sonoma, zshversion in first alias
+# 240909, aliases
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -36,7 +36,7 @@ export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
 ## aliases
 unalias -a # destroy all existing aliases
 
-alias zshversion='echo zshrc=v5.5'
+alias zshversion='echo zshrc=v5.6'
 
 source $HOME/.config/.aliases-ibm # load ibm aliases, credentials
 source $HOME/.jax-aliases # load common aliases between linux and mac
