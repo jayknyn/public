@@ -51,8 +51,8 @@ alias dsa='detect-secrets audit .secrets.baseline'
 alias cicd='cd /Users/jay/code/cio-cicd-release-management'
 alias op='/Users/jay/.config/cirrus-prod.sh'
 alias onp='/Users/jay/.config/cirrus-nonprod.sh'
-alias vl='source /Users/jay/code/ies-devsecops/scripts/vault/vault-login.sh'
-alias vr='/Users/jay/code/ies-devsecops/scripts/vault/vault-read.sh'
+alias vl='source /Users/jay/code/ies-devsecops/vault/vault-login.sh'
+alias vr='/Users/jay/code/ies-devsecops/vault/vault-read.sh'
 
 ## shell config
 zshversion && nvm use 18
