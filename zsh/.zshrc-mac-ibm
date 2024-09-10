@@ -53,6 +53,8 @@ alias op='/Users/jay/.config/cirrus-prod.sh'
 alias onp='/Users/jay/.config/cirrus-nonprod.sh'
 alias vl='source /Users/jay/code/ies-devsecops/vault/vault-login.sh'
 alias vr='/Users/jay/code/ies-devsecops/vault/vault-read.sh'
+alias gpge='/Users/jay/code/ies-devsecops/scripts/gpg-encrypt-decrypt/gpg-encrypt.sh'
+alias gpgd='/Users/jay/code/ies-devsecops/scripts/gpg-encrypt-decrypt/gpg-decrypt.sh'
 
 ## shell config
 zshversion && nvm use 18
