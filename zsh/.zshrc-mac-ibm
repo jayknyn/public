@@ -1,5 +1,5 @@
 # .zshrc for mac-ibm (m1 arm), sonoma, zshversion in first alias
-# 240909, aliases
+# 241011, aliases
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -36,7 +36,7 @@ export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
 ## aliases
 unalias -a # destroy all existing aliases
 
-alias zshversion='echo zshrc=v5.6'
+alias zshversion='echo zshrc=v5.7'
 
 source $HOME/.config/.aliases-ibm # load ibm aliases, credentials
 source $HOME/.jax-aliases # load common aliases between linux and mac
@@ -54,6 +54,8 @@ alias onp='/Users/jay/.config/cirrus-nonprod.sh'
 alias vl='source /Users/jay/code/ies-devsecops/vault/vault-login.sh'
 alias vlp='source /Users/jay/code/ies-devsecops/vault/vault-login-prod.sh'
 alias vr='/Users/jay/code/ies-devsecops/vault/vault-read.sh'
+alias vrkv='vault read -format=json ibmcloud/kv/secrets | jq -r '\''.data.secrets.[] | .name'\'''
+alias vrdb='vault read -format=json ibmcloud/service_credentials/secrets | jq -r '\''.data.secrets.[] | .name'\'''
 alias gpge='/Users/jay/code/ies-devsecops/scripts/gpg-encrypt-decrypt/gpg-encrypt.sh'
 alias gpgd='/Users/jay/code/ies-devsecops/scripts/gpg-encrypt-decrypt/gpg-decrypt.sh'
 
