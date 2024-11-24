@@ -1,5 +1,5 @@
 # common aliases for mac: x86, arm | v2
-# 240909
+# 241123
 
 alias ls='ls -G' # ls - TAB for all varibales
 
@@ -40,6 +40,7 @@ alias ns1='ssh nomad-server1'
 alias ns2='ssh nomad-server2'
 alias ns21='ssh nomad-ayam21'
 alias ns31='ssh nomad-ayam31'
+alias netcom='ssh netcom'
 
 # nomad
 alias jp='nomad job plan'
