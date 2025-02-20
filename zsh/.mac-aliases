@@ -1,5 +1,5 @@
 # common aliases for mac: x86, arm | v2
-# 241128
+# 250220
 
 alias ls='ls -G' # ls - TAB for all varibales
 
@@ -17,6 +17,7 @@ alias n='npm'
 alias nr='npm run'
 alias ni='npm install'
 alias nid='npm install --save-dev'
+alias nil='npm install --legacy-peer-deps'
 alias nu='npm uninstall'
 alias nc='npm ci'
 alias ns='npm run start'
