@@ -1,5 +1,5 @@
 # .zshrc for hackintosh, ventura, optimac, version in first alias
-# 240814, moving hashi aliases to mac-aliases
+# 250224, moving hashi aliases to mac-aliases
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -30,7 +30,7 @@ export PATH=/Users/jay/.nvm/versions/node/v18.18.2/bin:/Users/jay/.pyenv/shims:/
 ## aliases
 unalias -a # destroy all existing aliases
 
-alias zshversion='echo zshrc=v5.8'
+alias zshversion='echo zshrc=v5.9'
 
 source $HOME/.jax-aliases # load common aliases between linux and mac
 source $HOME/.mac-aliases # load common aliases between mac
@@ -41,4 +41,4 @@ alias newzsh='wget -O /Users/$USER/.zshrc https://raw.githubusercontent.com/jayk
 alias vsc='codium .'
 
 ## shell config
-zshversion && nvm use 18
+zshversion && nvm use 20
