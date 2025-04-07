@@ -1,5 +1,5 @@
 # .zshrc for mac-ibm (m1 arm), sonoma, zshversion in first alias
-# 241115, aliases
+# 250407, aliases
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -36,7 +36,7 @@ export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
 ## aliases
 unalias -a # destroy all existing aliases
 
-alias zshversion='echo zshrc=v5.8'
+alias zshversion='echo zshrc=v5.9'
 
 source $HOME/.config/.aliases-ibm # load ibm aliases, credentials
 source $HOME/.jax-aliases # load common aliases between linux and mac
@@ -49,8 +49,8 @@ alias python='python3.12'
 alias dss='detect-secrets scan --update .secrets.baseline'
 alias dsa='detect-secrets audit .secrets.baseline'
 alias cicd='cd /Users/jay/code/cio-cicd-release-management'
-alias op='/Users/jay/.config/cirrus-prod.sh'
-alias onp='/Users/jay/.config/cirrus-nonprod.sh'
+alias osp='/Users/jay/.config/cirrus-prod.sh'
+alias osnp='/Users/jay/.config/cirrus-nonprod.sh'
 alias vl='source /Users/jay/code/ies-devsecops/vault/vault-login.sh'
 alias vlp='source /Users/jay/code/ies-devsecops/vault/vault-login-prod.sh'
 alias vr='/Users/jay/code/ies-devsecops/vault/vault-read.sh'
