@@ -1,5 +1,5 @@
-# common aliases for mac: x86, arm | v2
-# 250220
+# common aliases for mac: x86, arm | v3
+# 250613
 
 alias ls='ls -G' # ls - TAB for all varibales
 
@@ -26,6 +26,8 @@ alias nb='npm run build'
 alias nv='node -v'
 alias na='npm audit'
 alias naf='npm audit fix'
+
+alias wr='npx wrangler'
 
 alias yt='yt-dlp --config-location ~/.config/yt-dl/config'
 alias ytv='yt-dlp --config-location ~/.config/yt-dl/config-video'
