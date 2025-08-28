@@ -1,10 +1,11 @@
 # common aliases for linux, mac x86, mac arm, v2
-# 240731
+# 250828
 
 # bash functions
+secret() { openssl rand -base64 64 | tr -dc 'A-Za-z0-9' | head -c $1; echo } # best random secret, $ secret 32 OR secret 64
 encode() { echo -n $1 | base64 } # base64 encode the input: $ encode INPUT
 decode() { echo -n $1 | base64 -d } # base64 decode the input
-secret() { openssl rand -hex $1 } # to generate 24 hex secret $ secret 24
+hexsecret() { openssl rand -hex $1 } # to generate 24 hex secret $ secret 24
 de() { docker exec -it $1 sh } # docker exec into container $ de <container-id>
 deb() { docker exec -it "$1" bash; }
 count() { ls -A $1 | wc -l }
