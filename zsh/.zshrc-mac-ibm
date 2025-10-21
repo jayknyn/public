@@ -26,7 +26,7 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # 251021: removing path to python3.9, not needed as using python3.13 managed by brew `/Users/jay/Library/Python/3.9/bin:`
-export PATH=/Users/jay/.nvm/versions/node/v20.11.0/bin:/opt/homebrew/bin:/opt/homebrew/opt/libpq/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/jay/Library/CloudStorage/Box-Box/1-Jay-IBM-Docs/ibmid:
+export PATH=/Users/jay/.nvm/versions/node/v20.11.0/bin:/opt/homebrew/bin:/opt/homebrew/opt/libpq/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/jay/Library/CloudStorage/Box-Box/1-Jay-IBM-Docs/ibmid:/Users/jay/.local/bin:
 
 # autocomplete for terraform
 autoload -U +X bashcompinit && bashcompinit
