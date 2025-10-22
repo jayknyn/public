@@ -1,5 +1,5 @@
 # .zshrc for hackintosh, ventura, optijax, version in first alias
-# 250828, adding gpg agent for yubikey ssh
+# 251022, adding cloudflare-vars
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -35,11 +35,12 @@ export PATH=/Users/jay/.nvm/versions/node/v18.18.2/bin:/Users/jay/.pyenv/shims:/
 ## aliases
 unalias -a # destroy all existing aliases
 
-alias zshversion='echo zshrc=v5.10'
+alias zshversion='echo zshrc=v5.11'
 
 source $HOME/.jax-aliases # load common aliases between linux and mac
 source $HOME/.mac-aliases # load common aliases between mac
-source $HOME/.ssh/.hashi-vars
+source $HOME/.ssh/.hashi-vars # load hashi cluster creds
+source $HOME/.ssh/.cloudflare-vars # load cloudflare worker creds
 
 alias newzsh='wget -O /Users/$USER/.zshrc https://raw.githubusercontent.com/jayknyn/public/main/zsh/.zshrc-mac-x86 && wget -O /Users/$USER/.oh-my-zsh/themes/jax.zsh-theme https://raw.githubusercontent.com/jayknyn/public/main/zsh/jax-mac.zsh-theme && wget -O /Users/$USER/.jax-aliases https://raw.githubusercontent.com/jayknyn/public/main/zsh/.jax-aliases && wget -O /Users/$USER/.mac-aliases https://raw.githubusercontent.com/jayknyn/public/main/zsh/.mac-aliases && source ~/.zshrc'
 
