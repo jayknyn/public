@@ -1,5 +1,5 @@
 # .zshrc for hackintosh, ventura, optijax, version in first alias
-# 251022, adding cloudflare-vars
+# 251022, adding cloudflare-vars, safe-chain, node v22
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -42,9 +42,11 @@ source $HOME/.mac-aliases # load common aliases between mac
 source $HOME/.ssh/.hashi-vars # load hashi cluster creds
 source $HOME/.ssh/.cloudflare-vars # load cloudflare worker creds
 
+source $HOME/.safe-chain/scripts/init-posix.sh # Safe-chain Zsh initialization script
+
 alias newzsh='wget -O /Users/$USER/.zshrc https://raw.githubusercontent.com/jayknyn/public/main/zsh/.zshrc-mac-x86 && wget -O /Users/$USER/.oh-my-zsh/themes/jax.zsh-theme https://raw.githubusercontent.com/jayknyn/public/main/zsh/jax-mac.zsh-theme && wget -O /Users/$USER/.jax-aliases https://raw.githubusercontent.com/jayknyn/public/main/zsh/.jax-aliases && wget -O /Users/$USER/.mac-aliases https://raw.githubusercontent.com/jayknyn/public/main/zsh/.mac-aliases && source ~/.zshrc'
 
 alias vsc='codium .'
 
 ## shell config
-zshversion && nvm use 20
+zshversion && nvm use 22
