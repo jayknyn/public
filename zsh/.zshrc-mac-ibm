@@ -1,5 +1,5 @@
 # .zshrc for mac-ibm (m1 arm), sonoma, zshversion in first alias
-# 251021, aliases
+# 251024, aliases
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -40,7 +40,7 @@ export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
 ## aliases
 unalias -a # destroy all existing aliases
 
-alias zshversion='echo zshrc=v5.12'
+alias zshversion='echo zshrc=v5.13'
 
 source $HOME/.config/.aliases-ibm # load ibm aliases, credentials
 source $HOME/.jax-aliases # load common aliases between linux and mac
@@ -54,10 +54,13 @@ alias pip='pip3'
 alias dss='detect-secrets scan --update .secrets.baseline'
 alias dsa='detect-secrets audit .secrets.baseline'
 alias cicd='cd /Users/jay/code/cio-cicd-release-management'
-alias osp='/Users/jay/.config/cirrus-prod.sh'
-alias osnp='/Users/jay/.config/cirrus-nonprod.sh'
-alias vl='source /Users/jay/code/ies-devsecops/vault/vault-login.sh'
+alias osp1='/Users/jay/code/ies-devsecops/openshift/openshift-cluster-login.sh prod wdc1'
+alias osp2='/Users/jay/code/ies-devsecops/openshift/openshift-cluster-login.sh prod wdc2'
+alias osnp1='/Users/jay/code/ies-devsecops/openshift/openshift-cluster-login.sh nonprod wdc1'
+alias osnp2='/Users/jay/code/ies-devsecops/openshift/openshift-cluster-login.sh nonprod wdc2'
+alias osnp3='/Users/jay/code/ies-devsecops/openshift/openshift-cluster-login.sh nonprod wdc3'
 alias vlp='source /Users/jay/code/ies-devsecops/vault/vault-login-prod.sh'
+alias vlnp='source /Users/jay/code/ies-devsecops/vault/vault-login-nonprod.sh'
 alias vr='/Users/jay/code/ies-devsecops/vault/vault-read.sh'
 alias vrkv='vault read -format=json ibmcloud/kv/secrets | jq -r '\''.data.secrets.[] | .name'\'''
 alias vrdb='vault read -format=json ibmcloud/service_credentials/secrets | jq -r '\''.data.secrets.[] | .name'\'''
@@ -69,10 +72,15 @@ alias ogp='oc get pods'
 vwnp() { vault kv put ibmcloud/kv/$1 value=@secrets-nonprod/$1.vault.json }
 vwp() { vault kv put ibmcloud/kv/$1 value=@secrets-prod/$1.vault.json }
 
-# openshift funtions
+## openshift funtions
+# ➜ execpod <app-name>
 execpod() { oc exec -it "$(oc get pods --no-headers | grep "$1" | awk '{print $1}' | head -n 1)" -- bash }
-getlogs() { oc exec "$(oc get pods --no-headers | grep "$1" | awk '{print $1}' | head -n 1)" -- cat "$2" > "$(basename "$2" .log)-$(date +%y%m%d-%H%M).log" }
-ol() { oc logs -f -l app="$1" }
+# ➜ getlogfile <app-name> </path/to/log.file>
+getlogfile() { oc exec "$(oc get pods --no-headers | grep "$1" | awk '{print $1}' | head -n 1)" -- cat "$2" > "$(basename "$2" .log)-$(date +%y%m%d-%H%M).log" }
+# get container/stdout/stderr logs ➜ getlogs <app-name>
+getlogs() { oc logs -c "$1" "$(oc get pods --no-headers | grep "$1" | awk '{print $1}' | head -n 1)" > "$1-stdout-$(date +%y%m%d-%H%M).log"; }
+# stream container logs ➜ taillogs <app-name>
+taillogs() { oc logs -f -l app="$1" }
 
 ## shell config
 zshversion && nvm use 20
