@@ -38,7 +38,7 @@ export PATH=/Users/jay/.nvm/versions/node/v18.18.2/bin:/Users/jay/.pyenv/shims:/
 ## aliases
 unalias -a # destroy all existing aliases
 
-alias zshversion='echo zshrc=v5.12'
+alias zshversion='echo zshrc=v5.13'
 
 source $HOME/.jax-aliases # load common aliases between linux and mac
 source $HOME/.mac-aliases # load common aliases between mac
@@ -50,6 +50,12 @@ source $HOME/.safe-chain/scripts/init-posix.sh # Safe-chain Zsh initialization s
 alias newzsh='wget -O /Users/$USER/.zshrc https://raw.githubusercontent.com/jayknyn/public/main/zsh/.zshrc-mac-x86 && wget -O /Users/$USER/.oh-my-zsh/themes/jax.zsh-theme https://raw.githubusercontent.com/jayknyn/public/main/zsh/jax-mac.zsh-theme && wget -O /Users/$USER/.jax-aliases https://raw.githubusercontent.com/jayknyn/public/main/zsh/.jax-aliases && wget -O /Users/$USER/.mac-aliases https://raw.githubusercontent.com/jayknyn/public/main/zsh/.mac-aliases && source ~/.zshrc'
 
 alias vsc='codium .'
+
+# bash function for android adb commands
+adbtype() {
+  local text="$(echo "$@" | sed 's/ /%s/g')" # Replace spaces with %s using sed
+  adb shell input text "$text" && adb shell input keyevent 66 # Send text and press Enter (keycode 66)
+}
 
 ## shell config
 zshversion && nvm use 22
