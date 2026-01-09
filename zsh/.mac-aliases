@@ -1,5 +1,5 @@
 # common aliases for mac: x86, arm | v3
-# 250613
+# 260109
 
 alias ls='ls -G' # ls - TAB for all varibales
 
@@ -33,12 +33,12 @@ alias yt='yt-dlp --config-location ~/.config/yt-dl/config'
 alias ytv='yt-dlp --config-location ~/.config/yt-dl/config-video'
 
 # ssh configs
-alias mxayam='ssh mx-ayam'
-alias vlad='ssh vlad'
-alias monitoring='ssh gcp1'
-alias kisco='ssh kisco'
 alias basement='ssh jibhi3'
+alias kisco='ssh kisco'
 alias agonda='ssh agonda'
+alias mxayam='ssh mx-ayam'
+alias bastion='ssh genesis-bastion'
+alias kleenmail='ssh kleenmail'
 alias ns1='ssh nomad-server1'
 alias ns2='ssh nomad-server2'
 alias ns21='ssh nomad-ayam21'
