@@ -1,5 +1,5 @@
 # .zshrc for jay personal macbook air (m2 arm, sonoma), version in first alias
-# 240809 
+# 260109, bitwarden ssh agent 
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jax"
@@ -22,24 +22,26 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+
+# Using Bitwarden as SSH Agent
+export SSH_AUTH_SOCK=/Users/jay/.bitwarden-ssh-agent.sock
 # set PATH
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:
 
 ## aliases
 unalias -a # destroy all existing aliases
 
-alias zshversion='echo zshrc=v5.5'
+alias zshversion='echo zshrc=v5.6'
 
 source $HOME/.jax-aliases # load common aliases between linux and mac
 source $HOME/.mac-aliases # load common aliases between mac
-source $HOME/.ssh/.hashi-vars
+source $HOME/.ssh/.hashi-vars # load hashi cluster creds
+source $HOME/.ssh/.cloudflare-vars # load cloudflare worker creds
 
+source $HOME/.safe-chain/scripts/init-posix.sh # Safe-chain Zsh initialization script
 alias newzsh='wget -O /Users/$USER/.zshrc https://raw.githubusercontent.com/jayknyn/public/main/zsh/.zshrc-mac-arm && wget -O /Users/$USER/.oh-my-zsh/themes/jax.zsh-theme https://raw.githubusercontent.com/jayknyn/public/main/zsh/jax-mac.zsh-theme && wget -O /Users/$USER/.jax-aliases https://raw.githubusercontent.com/jayknyn/public/main/zsh/.jax-aliases && wget -O /Users/$USER/.mac-aliases https://raw.githubusercontent.com/jayknyn/public/main/zsh/.mac-aliases && source ~/.zshrc'
 
 alias vsc='codium .'
-alias jp='nomad job plan'
-alias jr='nomad job run -verbose'
-alias js='nomad job stop'
 
 ## shell config
-zshversion && nvm use 18
+zshversion && nvm use 22
